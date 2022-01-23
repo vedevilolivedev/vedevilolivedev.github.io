@@ -1,0 +1,9 @@
+{
+  "path": "cz-emoji",
+  "config": {
+    "cz-emoji": {
+      "skipQuestions": ["breaking", "issues"],
+      "scopes": ["hugo", "post", "other"]
+    }
+  }
+}
