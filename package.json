@@ -13,10 +13,12 @@
     }
   },
   "lint-staged": {
-    "config.toml|.github/**/*.{yml,yaml}": "prettier --config .prettierrc --ignore-unknown --list-different --plugin=prettier-plugin-toml --write"
+    "config.toml|.github/**/*.{yml,yaml}": "prettier --config .prettierrc --ignore-unknown --list-different --plugin=prettier-plugin-toml --write",
+    "!detect_private_key.py": "python3 .husky/detect_private_key.py"
   },
   "scripts": {
     "prepare": "husky install",
-    "format": "prettier --config .prettierrc --ignore-unknown --list-different --plugin=prettier-plugin-toml --write"
+    "format": "prettier --config .prettierrc --ignore-unknown --list-different --plugin=prettier-plugin-toml --write",
+    "detectpriv": "python3 .husky/detect_private_key.py"
   }
 }
