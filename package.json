@@ -13,7 +13,7 @@
     }
   },
   "lint-staged": {
-    "config.toml|.github/**/*.yml": "prettier --config .prettierrc --ignore-unknown --list-different --plugin=prettier-plugin-toml --write"
+    "config.toml|.github/**/*.{yml,yaml}": "prettier --config .prettierrc --ignore-unknown --list-different --plugin=prettier-plugin-toml --write"
   },
   "scripts": {
     "prepare": "husky install",
