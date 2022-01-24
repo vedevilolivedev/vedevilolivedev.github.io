@@ -3,7 +3,7 @@
   "config": {
     "cz-emoji": {
       "skipQuestions": ["breaking", "issues"],
-      "scopes": ["hugo", "post", "other"]
+      "scopes": ["hugo", "post", "other", "husky", "node"]
     }
   }
 }
