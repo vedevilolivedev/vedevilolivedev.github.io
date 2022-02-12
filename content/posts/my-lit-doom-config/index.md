@@ -20,10 +20,7 @@ toc = true
 
 ## User info {#user-info}
 
-```emacs-lisp
-(setq user-full-name "Ved Evilolive"
-      user-mail-address "ved@evilolive.dev")
-```
+Not shown here. Standard `user-full-name` and `user-mail-address` `setq`
 
 
 ## GPG/Security setup {#gpg-security-setup}
@@ -37,22 +34,7 @@ Set the settings for authorization/passwords.
 
 ## System-specific {#system-specific}
 
-
-### Definitions {#definitions}
-
-
-#### Work/DENM {#work-denm}
-
-```emacs-lisp
-(defconst DENM (string-equal (system-name) "bburks-mbp"))
-```
-
-
-#### Crius {#crius}
-
-```emacs-lisp
-(defconst CRIUS (string-equal (system-name) "crius.local"))
-```
+Hostnames hidden here.
 
 
 ## UI {#ui}
