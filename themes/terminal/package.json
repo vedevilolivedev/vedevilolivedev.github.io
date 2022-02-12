@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode=production"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
