@@ -359,7 +359,6 @@ First need to set the org directory
                                          (org-end-of-subtree)
                                          (point))
                                '(read_only t))))))
-                                        ;(add-hook! org-mode #'ap/org-mark-read-only)
 (add-hook! 'org-mode-hook #'ap/org-mark-read-only)
 ```
 
@@ -368,8 +367,10 @@ First need to set the org directory
 
 Some customizatons and additions
 
+
+#### Org {#org}
+
 ```emacs-lisp
-(after! org
   (appendq! +ligatures-extra-symbols
              '(:title         "T"
                   :subtitle      ""
@@ -398,7 +399,21 @@ Some customizatons and additions
     :partialbox "[-]"
     :email "#+email:"
     :email "#+EMAIL:"
-    ))
+    )
+```
+
+
+#### General {#general}
+
+Fix some that don't show up on Mac for some fucking reason.
+
+```emacs-lisp
+(plist-put! +ligatures-extra-symbols
+            :true "⊨"
+            :false "⊭"
+            :str ""
+            :bool "ℬ"
+)
 ```
 
 
@@ -459,13 +474,13 @@ I forget what invisible-edits does.
 <https://github.com/zzamboni/dot-doom/blob/master/doom.org#visual-session-and-window-settings>
 
 ```emacs-lisp
-(defun zz/org-reformat-buffer ()
+(after! org (defun zz/org-reformat-buffer ()
   (interactive)
   (when (y-or-n-p "Really format current buffer? ")
     (let ((document (org-element-interpret-data (org-element-parse-buffer))))
       (erase-buffer)
       (insert document)
-      (goto-char (point-min)))))
+      (goto-char (point-min))))))
 ```
 
 
@@ -474,11 +489,11 @@ I forget what invisible-edits does.
 It's annoying
 
 ```emacs-lisp
-  (defun ved/org-mode-hook()
+  (after! company (defun ved/org-mode-hook()
     (when (featurep! :completion company)
       (message "Disabling company-mode while in org-capture...")
-      (company-mode -1)))
-  (add-hook! org-capture-mode (ved/org-mode-hook))
+      (company-mode -1))))
+  (after! org (add-hook! org-capture-mode (ved/org-mode-hook)))
 ```
 
 
@@ -502,17 +517,20 @@ Save some effort. Requires you put a property, unless you set `org-auto-tangle-d
 Setting up org stuff to get it to look better I guess.
 
 ```emacs-lisp
-(add-hook! 'org-mode-hook #'mixed-pitch-mode)
-(add-hook! 'org-mode-hook #'solaire-mode)
-(setq mixed-pitch-variable-pitch-cursor nil)
-(setq org-superstar-prettify-item-bullets t)
+(after! org
+  (add-hook! 'org-mode-hook #'mixed-pitch-mode)
+  (add-hook! 'org-mode-hook #'solaire-mode)
+  (setq mixed-pitch-variable-pitch-cursor nil))
+(after! org-superstar
+  (setq org-superstar-prettify-item-bullets t)
+)
 ```
 
 
 ### More prettify {#more-prettify}
 
 ```emacs-lisp
-(custom-set-faces!
+(after! org (custom-set-faces!
   '(outline-1 :weight extra-bold :height 1.25)
   '(outline-2 :weight bold :height 1.15)
   '(outline-3 :weight bold :height 1.12)
@@ -521,7 +539,7 @@ Setting up org stuff to get it to look better I guess.
   '(outline-6 :weight semi-bold :height 1.03)
   '(outline-8 :weight semi-bold)
   '(outline-9 :weight semi-bold)
-  '(org-document-title :height 1.2))
+  '(org-document-title :height 1.2)))
 ```
 
 
@@ -531,8 +549,8 @@ Just some annoying rebinds that I don't want.
 
 ```emacs-lisp
 (map! :map evil-org-mode-map
-  :i "C-d" #'org-delete-char
-  :i "C-h" #'embark-help-command
+  :ei "C-d" #'org-delete-char
+  :ie "C-h" #'embark-help-command
 )
 ```
 
@@ -703,6 +721,34 @@ For `.gitlabci` file
 ```
 
 
+### Puppet {#puppet}
+
+```emacs-lisp
+(package! puppet-mode)
+```
+
+```emacs-lisp
+(use-package! puppet-mode
+  :defer t
+  :commands puppet-mode)
+```
+
+
+### Jenkinsfile {#jenkinsfile}
+
+```emacs-lisp
+(package! groovy-mode)
+(package! jenkinsfile-mode)
+```
+
+```emacs-lisp
+(use-package! jenkinsfile-mode
+:commands jenkinsfile-mode)
+(use-package! groovy-mode
+:commands groovy-mode)
+```
+
+
 ## Smart Parens {#smart-parens}
 
 First thing is stop duplicates for quotes in vim, lisp, and org modes.
@@ -850,7 +896,7 @@ Should be disabled, but just in case make it not update.
 
 ```emacs-lisp
 (after! projectile
-(setq projectile-auto-update-cache nil))
+  (setq projectile-auto-update-cache nil))
 ```
 
 
@@ -859,7 +905,7 @@ Should be disabled, but just in case make it not update.
 This is a document lookup tool for MacOS.
 
 
-### Install package (if MacOS) {#install-package--if-macos}
+### Install package if MacOS {#install-package-if-macos}
 
 ```emacs-lisp
 (when IS-MAC
@@ -867,7 +913,7 @@ This is a document lookup tool for MacOS.
 ```
 
 
-### Configure (if mac) {#configure--if-mac}
+### Configure if mac {#configure-if-mac}
 
 -   TODO Figure out what hyper is on linux
 
@@ -902,4 +948,21 @@ Lua doesn't have it for some reason, so we set it up.
 
 ```emacs-lisp
 (add-hook! 'lua-mode-hook (rainbow-delimiters-mode))
+```
+
+
+## Editorconfig {#editorconfig}
+
+
+### Custom major modes {#custom-major-modes}
+
+Mostly for work but sometimes things need it (like `.tmpl` for `chezmoi`)
+
+```emacs-lisp
+(package! editorconfig-custom-majormode)
+```
+
+```emacs-lisp
+(after! editorconfig
+  (use-package! editorconfig-custom-majormode))
 ```
