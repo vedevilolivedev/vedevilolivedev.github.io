@@ -23,8 +23,9 @@ Content
 CLOSED: [2022-02-11 Fri 23:50]
 :PROPERTIES:
 :export_hugo_bundle: my-lit-doom-config
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: emacs
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
+:EXPORT_HUGO_SECTION: configs
 :END:
 #+begin_description
 Just my lit config

@@ -6,7 +6,7 @@ theme = 'terminal'
     themeColor = "blue"
     showMenuItems = 2
     enableGitInfo = true
-    centerTheme = false
+#    centerTheme = false
 [languages]
   [languages.en]
     languageName = "English"
@@ -33,6 +33,10 @@ theme = 'terminal'
         name = "About"
         url = "/about"
       [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
+        identifier = "configs"
+        name = "Configs"
+        url = "/configs"
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts"
