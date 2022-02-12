@@ -9,9 +9,13 @@ toc = true
 
 ## Headers {#headers}
 
+<details><summary>config.el</summary>
+
 ```emacs-lisp
 ;;; config.el -*- lexical-binding: t; -*-
 ```
+
+</details>
 
 ```emacs-lisp
 ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*-
