@@ -2,8 +2,10 @@
 (setq user-full-name &amp;#34;redacted&amp;#34; user-mail-address &amp;#34;redacted&amp;#34;) GPG/Security setup Set the settings for authorization/passwords. Don&amp;rsquo;t really use this but set anyway.
 (setq auth-sources &amp;#39;(&amp;#34;~/.authinfo.gpg&amp;#34;)) System-specific Hostnames hidden here. But they look like
 (defconst HOSTNAME (string-equal (system-name) &amp;#34;hostname&amp;#34;)) UI Scrolling Perhaps reduce flickering/help with speed on retina. See https://discourse.</description><content>&lt;h2 id="headers">Headers&lt;/h2>
+&lt;!-- raw HTML omitted -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; config.el -*- lexical-binding: t; -*-&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*-&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*-&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="user-info">User info&lt;/h2>
 &lt;p>The real version has the proper info obviously.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq &lt;span style="color:#a6e22e">user-full-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;redacted&amp;#34;&lt;/span>
