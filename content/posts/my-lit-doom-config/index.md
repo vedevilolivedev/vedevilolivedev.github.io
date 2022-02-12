@@ -2,7 +2,7 @@
 title = "Doom Config"
 author = ["Ved Evilolive"]
 description = "Just my lit config"
-date = 2022-01-23T14:57:00-07:00
+date = 2022-02-11T23:50:00-07:00
 draft = false
 toc = true
 +++
