@@ -149,13 +149,16 @@ Table of Contents
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp><span style=color:#75715e>;;; config.el -*- lexical-binding: t; -*-</span>
 </code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp><span style=color:#75715e>;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*-</span>
 </code></pre></div><h2 id=user-info>User info<a href=#user-info class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Not shown here. Standard <code>user-full-name</code> and <code>user-mail-address</code> <code>setq</code></p>
-<h2 id=gpg-security-setup>GPG/Security setup<a href=#gpg-security-setup class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Set the settings for authorization/passwords.</p>
+<p>The real version has the proper info obviously.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(setq <span style=color:#a6e22e>user-full-name</span> <span style=color:#e6db74>&#34;redacted&#34;</span>
+      user-mail-address <span style=color:#e6db74>&#34;redacted&#34;</span>)
+</code></pre></div><h2 id=gpg-security-setup>GPG/Security setup<a href=#gpg-security-setup class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Set the settings for authorization/passwords. Don&rsquo;t really use this but set anyway.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(setq auth-sources <span style=color:#f92672>&#39;</span>(<span style=color:#e6db74>&#34;~/.authinfo.gpg&#34;</span>))
 </code></pre></div><h2 id=system-specific>System-specific<a href=#system-specific class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Hostnames hidden here.</p>
-<h2 id=ui>UI<a href=#ui class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Hostnames hidden here. But they look like</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(defconst HOSTNAME (<span style=color:#a6e22e>string-equal</span> (<span style=color:#a6e22e>system-name</span>) <span style=color:#e6db74>&#34;hostname&#34;</span>))
+</code></pre></div><h2 id=ui>UI<a href=#ui class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <h3 id=scrolling>Scrolling<a href=#scrolling class=hanchor arialabel=Anchor>&#8983;</a> </h3>
 <p>Perhaps reduce flickering/help with speed on retina. See <a href=https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83/3>https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83/3</a></p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp><span style=color:#75715e>;; (add-to-list &#39;default-frame-alist &#39;(inhibit-double-buffering . t))</span>
