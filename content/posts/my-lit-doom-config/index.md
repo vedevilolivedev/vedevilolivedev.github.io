@@ -20,12 +20,17 @@ toc = true
 
 ## User info {#user-info}
 
-Not shown here. Standard `user-full-name` and `user-mail-address` `setq`
+The real version has the proper info obviously.
+
+```emacs-lisp
+(setq user-full-name "redacted"
+      user-mail-address "redacted")
+```
 
 
 ## GPG/Security setup {#gpg-security-setup}
 
-Set the settings for authorization/passwords.
+Set the settings for authorization/passwords. Don't really use this but set anyway.
 
 ```emacs-lisp
 (setq auth-sources '("~/.authinfo.gpg"))
@@ -34,7 +39,11 @@ Set the settings for authorization/passwords.
 
 ## System-specific {#system-specific}
 
-Hostnames hidden here.
+Hostnames hidden here. But they look like
+
+```emacs-lisp
+(defconst HOSTNAME (string-equal (system-name) "hostname"))
+```
 
 
 ## UI {#ui}
