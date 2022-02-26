@@ -1,571 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vedevilolivedev Blog</title><link>https://blog.evilolive.dev/</link><description>Recent content on vedevilolivedev Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Feb 2022 23:50:00 -0700</lastBuildDate><atom:link href="https://blog.evilolive.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Doom Config</title><link>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</link><pubDate>Fri, 11 Feb 2022 23:50:00 -0700</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</guid><description>Headers ;;; config.el -*- lexical-binding: t; -*- ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*- User info The real version has the proper info obviously.
-(setq user-full-name &amp;#34;redacted&amp;#34; user-mail-address &amp;#34;redacted&amp;#34;) GPG/Security setup Set the settings for authorization/passwords. Don&amp;rsquo;t really use this but set anyway.
-(setq auth-sources &amp;#39;(&amp;#34;~/.authinfo.gpg&amp;#34;)) System-specific Hostnames hidden here. But they look like
-(defconst HOSTNAME (string-equal (system-name) &amp;#34;hostname&amp;#34;)) UI Scrolling Perhaps reduce flickering/help with speed on retina. See https://discourse.</description><content>&lt;h2 id="headers">Headers&lt;/h2>
-&lt;!-- raw HTML omitted -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; config.el -*- lexical-binding: t; -*-&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*-&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="user-info">User info&lt;/h2>
-&lt;p>The real version has the proper info obviously.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq &lt;span style="color:#a6e22e">user-full-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;redacted&amp;#34;&lt;/span>
-user-mail-address &lt;span style="color:#e6db74">&amp;#34;redacted&amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gpg-security-setup">GPG/Security setup&lt;/h2>
-&lt;p>Set the settings for authorization/passwords. Don&amp;rsquo;t really use this but set anyway.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq auth-sources &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;~/.authinfo.gpg&amp;#34;&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="system-specific">System-specific&lt;/h2>
-&lt;p>Hostnames hidden here. But they look like&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defconst HOSTNAME (&lt;span style="color:#a6e22e">string-equal&lt;/span> (&lt;span style="color:#a6e22e">system-name&lt;/span>) &lt;span style="color:#e6db74">&amp;#34;hostname&amp;#34;&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ui">UI&lt;/h2>
-&lt;h3 id="scrolling">Scrolling&lt;/h3>
-&lt;p>Perhaps reduce flickering/help with speed on retina. See &lt;a href="https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83/3">https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83/3&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;; (add-to-list &amp;#39;default-frame-alist &amp;#39;(inhibit-double-buffering . t))&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="dashboard">Dashboard&lt;/h3>
-&lt;h4 id="fancy-splash-image">Fancy splash image&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq fancy-splash-image (&lt;span style="color:#a6e22e">concat&lt;/span> doom-private-dir &lt;span style="color:#e6db74">&amp;#34;/splash/doomslant.png&amp;#34;&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="utility-functions">Utility Functions&lt;/h4>
-&lt;p>These functions are also a convenience one so don&amp;rsquo;t have to repeat them.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun +ved/loadlit ()
-&lt;span style="color:#e6db74">&amp;#34;Load the lit.org from ~/.doom.d or whatever the private dir is.&amp;#34;&lt;/span>
-(interactive)
-(find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lit.org&amp;#34;&lt;/span> doom-private-dir)))
-(defun +ved/ffchez ()
-(interactive)
-&lt;span style="color:#e6db74">&amp;#34;Explore the chezmoi dotfiles directory since this is frequented.&amp;#34;&lt;/span>
-(doom-project-find-file &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/&amp;#34;&lt;/span>))
-(defun +ved/loadzshlit ()
-(interactive)
-&lt;span style="color:#e6db74">&amp;#34;Open the ZSH literate config file.&amp;#34;&lt;/span>
-(find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/ZSH-lit.org&amp;#34;&lt;/span>)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="change-the-mapping">Change the mapping&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map! :map +doom-dashboard-mode-map
-:ne &lt;span style="color:#e6db74">&amp;#34;f&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>find-file
-:ne &lt;span style="color:#e6db74">&amp;#34;r&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>consult-recent-file
-:ne &lt;span style="color:#e6db74">&amp;#34;p&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>doom/open-private-config
-:ne &lt;span style="color:#e6db74">&amp;#34;l&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadlit
-:ne &lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/ffchez
-:ne &lt;span style="color:#e6db74">&amp;#34;z&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadzshlit
-:ne &lt;span style="color:#e6db74">&amp;#34;B&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>consult-buffer
-:ne &lt;span style="color:#e6db74">&amp;#34;q&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>save-buffers-kill-terminal)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="menu-change">Menu Change&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq +doom-dashboard-menu-sections
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;Open File&amp;#34;&lt;/span>
-:icon (all-the-icons-octicon &lt;span style="color:#e6db74">&amp;#34;file-text&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
-:action find-file)
-(&lt;span style="color:#e6db74">&amp;#34;Recently Opened Files&amp;#34;&lt;/span>
-:icon (all-the-icons-octicon &lt;span style="color:#e6db74">&amp;#34;history&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
-:action recentf-open-files)
-(&lt;span style="color:#e6db74">&amp;#34;Open EMACS Config Dir&amp;#34;&lt;/span>
-:icon (all-the-icons-faicon &lt;span style="color:#e6db74">&amp;#34;folder-open-o&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
-:action doom/open-private-config)
-(&lt;span style="color:#e6db74">&amp;#34;Open EMACS Literate ORG File&amp;#34;&lt;/span>
-:icon (all-the-icons-fileicon &lt;span style="color:#e6db74">&amp;#34;emacs&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
-:action +ved/loadlit)
-(&lt;span style="color:#e6db74">&amp;#34;Open ZSH Literate File&amp;#34;&lt;/span>
-:icon (all-the-icons-fileicon &lt;span style="color:#e6db74">&amp;#34;org&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
-:action +ved/loadzshlit)
-(&lt;span style="color:#e6db74">&amp;#34;Open Chezmoi Dotfiles Dir&amp;#34;&lt;/span>
-:icon (all-the-icons-octicon &lt;span style="color:#e6db74">&amp;#34;home&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
-:action +ved/ffchez)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="better-buffer-name">Better Buffer Name&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq +doom-dashboard-name &lt;span style="color:#e6db74">&amp;#34; Doom&amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="font">Font&lt;/h3>
-&lt;p>Still trying to figure out which I like best.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq doom-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;FiraMono Nerd Font&amp;#34;&lt;/span> :size &lt;span style="color:#ae81ff">13&lt;/span>)
-doom-big-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;FiraMono Nerd Font&amp;#34;&lt;/span> :size &lt;span style="color:#ae81ff">18&lt;/span>)
-doom-variable-pitch-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;FiraCode Nerd Font&amp;#34;&lt;/span> :size &lt;span style="color:#ae81ff">13&lt;/span>)
-doom-serif-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;CodeNewRoman Nerd Font&amp;#34;&lt;/span> :weight &lt;span style="color:#e6db74">&amp;#39;regular&lt;/span>)
-doom-unicode-font doom-font)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="theme">Theme&lt;/h3>
-&lt;p>Unpin doom-themes&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(unpin! doom-themes)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Got this for in case I start using one config for two computers. Maybe remove this.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;(when CRIUS (setq doom-theme &amp;#39;doom-outrun-electric))&lt;/span>
-(setq doom-theme &lt;span style="color:#e6db74">&amp;#39;doom-tokyo-night&lt;/span>)
-(setq doom-tokyo-night-padded-modeline &lt;span style="color:#ae81ff">4&lt;/span>)
-&lt;span style="color:#75715e">;; (setq! doom-outrun-electric-brighter-comments t)&lt;/span>
-&lt;span style="color:#75715e">;; (when DENM (setq doom-theme &amp;#39;doom-dracula))&lt;/span>
-&lt;span style="color:#75715e">;; (when (eq doom-theme &amp;#39;doom-dracula)&lt;/span>
-&lt;span style="color:#75715e">;; (setq! doom-dracula-colorful-headers t))&lt;/span>
-(setq! doom-themes-padded-modeline &lt;span style="color:#66d9ef">t&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modeline-settings">Modeline Settings&lt;/h3>
-&lt;p>So it doesnt bump up all the way against the frame. Still might need some padding.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq!
-doom-modeline-buffer-file-name-style &lt;span style="color:#e6db74">&amp;#39;truncate-upto-root&lt;/span>
-doom-modeline-major-mode-icon &lt;span style="color:#66d9ef">t&lt;/span>
-doom-modeline-major-mode-color-icon &lt;span style="color:#66d9ef">t&lt;/span>
-doom-modeline-buffer-encoding &lt;span style="color:#66d9ef">nil&lt;/span>
-doom-modeline-workspace-name &lt;span style="color:#66d9ef">nil&lt;/span>
-doom-modeline-persp-name &lt;span style="color:#66d9ef">nil&lt;/span>
-doom-modeline-indent-info &lt;span style="color:#66d9ef">t&lt;/span>
-all-the-icons-scale-factor &lt;span style="color:#ae81ff">1.1&lt;/span>
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="nyan-mode">Nyan Mode&lt;/h4>
-&lt;p>Always must have.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! nyan-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! nyan-mode
-:after doom-modeline
-:config
-(nyan-mode)
-:custom
-(nyan-animate-nyancat &lt;span style="color:#66d9ef">t&lt;/span>)
-(nyan-wavy-trail &lt;span style="color:#66d9ef">t&lt;/span>)
-(nyan-bar-length &lt;span style="color:#ae81ff">27&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="set-indicator-colors-in-modeline">Set indicator colors in modeline&lt;/h4>
-&lt;p>I like these to also match the cursor, so below is about the same colors (some adjustments for visibility).&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(custom-set-faces!
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(doom-modeline-evil-insert-state :foreground &lt;span style="color:#e6db74">&amp;#34;#00eeee&amp;#34;&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(doom-modeline-evil-normal-state :foreground &lt;span style="color:#e6db74">&amp;#34;#Cd5555&amp;#34;&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(doom-modeline-evil-visual-state :foreground &lt;span style="color:#e6db74">&amp;#34;#6c7b8b&amp;#34;&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(match :foreground &lt;span style="color:#e6db74">&amp;#34;#000000&amp;#34;&lt;/span> :background &lt;span style="color:#e6db74">&amp;#34;#ff02ab&amp;#34;&lt;/span>)
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
-&lt;ul>
-&lt;li>
-&lt;p>Matching cursor&lt;/p>
-&lt;p>Except visual cause otherwise it&amp;rsquo;s hard to see sometimes&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq! evil-normal-state-cursor &lt;span style="color:#f92672">&amp;#39;&lt;/span>(box &lt;span style="color:#e6db74">&amp;#34;#Ee0000&amp;#34;&lt;/span>)
-evil-insert-state-cursor &lt;span style="color:#f92672">&amp;#39;&lt;/span>(box &lt;span style="color:#e6db74">&amp;#34;#00eeee&amp;#34;&lt;/span>)
-evil-visual-state-cursor &lt;span style="color:#f92672">&amp;#39;&lt;/span>((hbar &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>) &lt;span style="color:#e6db74">&amp;#34;#Ee1289&amp;#34;&lt;/span>)
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ul>
-&lt;h3 id="linenumber-colors">Linenumber colors&lt;/h3>
-&lt;p>Defaults for electric were too dark, so changing it here.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! display-line-numbers
-(custom-set-faces!
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(line-number :foreground &lt;span style="color:#e6db74">&amp;#34;#6C7B8B&amp;#34;&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(line-number-current-line :foreground &lt;span style="color:#e6db74">&amp;#34;#FFFFFF&amp;#34;&lt;/span> :weight bold)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="beacon">Beacon&lt;/h3>
-&lt;p>Highlights the point when scrolling and changing windows and such&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! beacon)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! beacon
-:config
-(beacon-mode &lt;span style="color:#66d9ef">t&lt;/span>)
-(setq! beacon-color &lt;span style="color:#e6db74">&amp;#34;#ee1289&amp;#34;&lt;/span>
-beacon-blink-delay &lt;span style="color:#ae81ff">0.3&lt;/span>
-beacon-blink-duration &lt;span style="color:#ae81ff">0.5&lt;/span>
-beacon-blink-when-focused &lt;span style="color:#66d9ef">t&lt;/span>)
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rainbow-mode">Rainbow Mode&lt;/h3>
-&lt;p>Show background of colors when colors are set.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! rainbow-mode
-:defer &lt;span style="color:#66d9ef">t&lt;/span>
-:hook ((text-mode prog-mode) &lt;span style="color:#f92672">.&lt;/span> rainbow-mode))
-(add-hook! &lt;span style="color:#e6db74">&amp;#39;rainbow-mode-hook&lt;/span> (hl-line-mode (if rainbow-mode &lt;span style="color:#ae81ff">-1&lt;/span> &lt;span style="color:#ae81ff">+1&lt;/span>)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="fix-color-menu">Fix color menu&lt;/h4>
-&lt;p>MacOS misses the thing that does colors like DeepPink2 in the menu. This fixes.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(require &lt;span style="color:#e6db74">&amp;#39;facemenu&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="show-parens">Show Parens&lt;/h3>
-&lt;p>Sets the colors for show parens&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(custom-set-faces!
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(show-paren-match :foreground &lt;span style="color:#e6db74">&amp;#34;#2f4f4f&amp;#34;&lt;/span> :background &lt;span style="color:#e6db74">&amp;#34;#00ee00&amp;#34;&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(show-paren-mismatch :background &lt;span style="color:#e6db74">&amp;#34;#ee0000&amp;#34;&lt;/span> :foreground &lt;span style="color:#e6db74">&amp;#34;#fffc00&amp;#34;&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(show-paren-match-expression :background &lt;span style="color:#e6db74">&amp;#34;#00868b&amp;#34;&lt;/span> :foreground &lt;span style="color:#e6db74">&amp;#34;#ffffff&amp;#34;&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(match :foreground &lt;span style="color:#e6db74">&amp;#34;#000000&amp;#34;&lt;/span> :background &lt;span style="color:#e6db74">&amp;#34;#Ff82ab&amp;#34;&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="org">Org&lt;/h2>
-&lt;p>First need to set the org directory&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-directory &lt;span style="color:#e6db74">&amp;#34;~/org/&amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="allow-encryption-in-org-files">Allow encryption in org files&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp"> (use-package! org-crypt
-:after org
-:config
-(setq! org-tags-exclude-from-inheritance &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;crypt&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;read_only&amp;#34;&lt;/span>)
-org-crypt-key &lt;span style="color:#e6db74">&amp;#34;ved@evilolive.dev&amp;#34;&lt;/span>
-org-crypt-disable-auto-save &lt;span style="color:#e6db74">&amp;#34;ask&amp;#34;&lt;/span>)
-:init
-(org-crypt-use-before-save-magic)
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="read-only-sections">Read-only sections&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun unpackaged/org-next-heading-tagged (tag)
-&lt;span style="color:#e6db74">&amp;#34;Move to beginning of next heading tagged with TAG and return point, or return nil if none found.&amp;#34;&lt;/span>
-(when (&lt;span style="color:#a6e22e">re-search-forward&lt;/span> (rx-to-string &lt;span style="color:#f92672">`&lt;/span>(seq bol (&lt;span style="color:#a6e22e">1+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">1+&lt;/span> blank) (optional (&lt;span style="color:#a6e22e">1+&lt;/span> not-newline) (&lt;span style="color:#a6e22e">1+&lt;/span> blank))
-&lt;span style="color:#75715e">;; Beginning of tags&lt;/span>
-&lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>
-&lt;span style="color:#75715e">;; Possible other tags&lt;/span>
-(0+ (seq (&lt;span style="color:#a6e22e">1+&lt;/span> (not (any &lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span> blank))) &lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>) )
-&lt;span style="color:#75715e">;; The tag that matters&lt;/span>
-&lt;span style="color:#f92672">,&lt;/span>tag &lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>))
-&lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#e6db74">&amp;#39;noerror&lt;/span>)
-(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">match-beginning&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>))))
-(defun ap/org-remove-read-only ()
-&lt;span style="color:#e6db74">&amp;#34;Remove read-only text properties from Org entries tagged \&amp;#34;read_only\&amp;#34; in current buffer.&amp;#34;&lt;/span>
-(let ((inhibit-read-only &lt;span style="color:#66d9ef">t&lt;/span>))
-(org-with-wide-buffer
-(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))
-(while (unpackaged/org-next-heading-tagged &lt;span style="color:#e6db74">&amp;#34;read_only&amp;#34;&lt;/span>)
-(&lt;span style="color:#a6e22e">remove-text-properties&lt;/span> (&lt;span style="color:#a6e22e">point&lt;/span>) (progn
-(org-end-of-subtree)
-(&lt;span style="color:#a6e22e">point&lt;/span>))
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(read_only &lt;span style="color:#66d9ef">t&lt;/span>))))))
-(add-hook! &lt;span style="color:#e6db74">&amp;#39;org-mode-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>ap/org-mark-read-only)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ligatures">Ligatures&lt;/h3>
-&lt;p>Some customizatons and additions&lt;/p>
-&lt;h4 id="org">Org&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp"> (appendq! +ligatures-extra-symbols
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(:title &lt;span style="color:#e6db74">&amp;#34;T&amp;#34;&lt;/span>
-:subtitle &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
-:author &lt;span style="color:#e6db74">&amp;#34;Ⓐ&amp;#34;&lt;/span>
-:property &lt;span style="color:#e6db74">&amp;#34;∹&amp;#34;&lt;/span>
-:name &lt;span style="color:#e6db74">&amp;#34;⒩&amp;#34;&lt;/span>
-:emptycheck &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
-:checkedbox &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
-:partialbox &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
-:email &lt;span style="color:#e6db74">&amp;#34;﫯&amp;#34;&lt;/span>
-))
-(set-ligatures! &lt;span style="color:#e6db74">&amp;#39;org-mode&lt;/span>
-:merge &lt;span style="color:#66d9ef">t&lt;/span>
-:title &lt;span style="color:#e6db74">&amp;#34;#+TITLE:&amp;#34;&lt;/span>
-:title &lt;span style="color:#e6db74">&amp;#34;#+title:&amp;#34;&lt;/span>
-:subtitle &lt;span style="color:#e6db74">&amp;#34;#+SUBTITLE:&amp;#34;&lt;/span>
-:subtitle &lt;span style="color:#e6db74">&amp;#34;#+subtitle:&amp;#34;&lt;/span>
-:author &lt;span style="color:#e6db74">&amp;#34;#+AUTHOR:&amp;#34;&lt;/span>
-:author &lt;span style="color:#e6db74">&amp;#34;#+author:&amp;#34;&lt;/span>
-:property &lt;span style="color:#e6db74">&amp;#34;#+PROPERTY:&amp;#34;&lt;/span>
-:property &lt;span style="color:#e6db74">&amp;#34;#+property:&amp;#34;&lt;/span>
-:name &lt;span style="color:#e6db74">&amp;#34;#+NAME:&amp;#34;&lt;/span>
-:name &lt;span style="color:#e6db74">&amp;#34;#+name:&amp;#34;&lt;/span>
-:emptycheck &lt;span style="color:#e6db74">&amp;#34;[ ]&amp;#34;&lt;/span>
-:checkedbox &lt;span style="color:#e6db74">&amp;#34;[X]&amp;#34;&lt;/span>
-:partialbox &lt;span style="color:#e6db74">&amp;#34;[-]&amp;#34;&lt;/span>
-:email &lt;span style="color:#e6db74">&amp;#34;#+email:&amp;#34;&lt;/span>
-:email &lt;span style="color:#e6db74">&amp;#34;#+EMAIL:&amp;#34;&lt;/span>
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="general">General&lt;/h4>
-&lt;p>Fix some that don&amp;rsquo;t show up on Mac for some fucking reason.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(plist-put! +ligatures-extra-symbols
-:true &lt;span style="color:#e6db74">&amp;#34;⊨&amp;#34;&lt;/span>
-:false &lt;span style="color:#e6db74">&amp;#34;⊭&amp;#34;&lt;/span>
-:str &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
-:bool &lt;span style="color:#e6db74">&amp;#34;ℬ&amp;#34;&lt;/span>
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="templates">Templates&lt;/h3>
-&lt;p>I&amp;rsquo;ve got my own templates I like to use.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(set-file-template! &lt;span style="color:#e6db74">&amp;#34;/\\(?:Sources/.*\\|README\\)\\.org$&amp;#34;&lt;/span>
-:trigger &lt;span style="color:#e6db74">&amp;#34;__head&amp;#34;&lt;/span>
-:mode &lt;span style="color:#e6db74">&amp;#39;org-mode&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="org-appear">Org Appear&lt;/h3>
-&lt;p>This makes org things show when the point is near/in it.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! org-appear)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! org-appear
-:hook (org-mode &lt;span style="color:#f92672">.&lt;/span> org-appear-mode)
-:config
-(setq! org-appear-autoemphasis &lt;span style="color:#66d9ef">t&lt;/span>
-org-appear-autosubmarkers &lt;span style="color:#66d9ef">t&lt;/span>
-)
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="general-org-settings">General Org Settings&lt;/h3>
-&lt;p>Hide the markers, inherit properties (I think that&amp;rsquo;s needed for the read-only/encryption one), add time to agenda done (not that I use it).
-I forget what invisible-edits does.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org
-(setq
-org-use-property-inheritance &lt;span style="color:#66d9ef">t&lt;/span>
-org-log-done &lt;span style="color:#e6db74">&amp;#39;time&lt;/span>
-org-catch-invisible-edits &lt;span style="color:#e6db74">&amp;#39;smart&lt;/span>
-&lt;span style="color:#75715e">;; org-export-with-sub-superscripts &amp;#39;{}&lt;/span>
-org-ellipsis &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
-org-support-shift-select &lt;span style="color:#66d9ef">t&lt;/span>
-org-hide-emphasis-markers &lt;span style="color:#66d9ef">t&lt;/span>
-org-id-link-to-org-use-id &lt;span style="color:#e6db74">&amp;#39;create-if-interactive-and-no-custom-id&lt;/span>
-)
-(add-hook! org-mode (electric-indent-local-mode &lt;span style="color:#ae81ff">-1&lt;/span>)))
-(global-prettify-symbols-mode &lt;span style="color:#ae81ff">1&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="org-reformat-buffer">Org reformat buffer&lt;/h3>
-&lt;p>&lt;a href="https://github.com/zzamboni/dot-doom/blob/master/doom.org#visual-session-and-window-settings">https://github.com/zzamboni/dot-doom/blob/master/doom.org#visual-session-and-window-settings&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org (defun zz/org-reformat-buffer ()
-(interactive)
-(when (y-or-n-p &lt;span style="color:#e6db74">&amp;#34;Really format current buffer? &amp;#34;&lt;/span>)
-(let ((document (org-element-interpret-data (org-element-parse-buffer))))
-(&lt;span style="color:#a6e22e">erase-buffer&lt;/span>)
-(&lt;span style="color:#a6e22e">insert&lt;/span> document)
-(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))))))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="disable-company-in-org">Disable Company in Org&lt;/h3>
-&lt;p>It&amp;rsquo;s annoying&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp"> (after! company (defun ved/org-mode-hook()
-(when (featurep! :completion company)
-(&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Disabling company-mode while in org-capture...&amp;#34;&lt;/span>)
-(company-mode &lt;span style="color:#ae81ff">-1&lt;/span>))))
-(after! org (add-hook! org-capture-mode (ved/org-mode-hook)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="auto-tangle">Auto-Tangle&lt;/h3>
-&lt;p>Save some effort. Requires you put a property, unless you set &lt;code>org-auto-tangle-default&lt;/code> to true. Otherwise use &lt;code>#+auto_tangle: t&lt;/code> at the top.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! org-auto-tangle)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! org-auto-tangle
-:defer &lt;span style="color:#66d9ef">t&lt;/span>
-:hook (org-mode &lt;span style="color:#f92672">.&lt;/span> org-auto-tangle-mode))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="org-ui">ORG UI&lt;/h3>
-&lt;p>Setting up org stuff to get it to look better I guess.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org
-(add-hook! &lt;span style="color:#e6db74">&amp;#39;org-mode-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>mixed-pitch-mode)
-(add-hook! &lt;span style="color:#e6db74">&amp;#39;org-mode-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>solaire-mode)
-(setq mixed-pitch-variable-pitch-cursor &lt;span style="color:#66d9ef">nil&lt;/span>))
-(after! org-superstar
-(setq org-superstar-prettify-item-bullets &lt;span style="color:#66d9ef">t&lt;/span>)
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="more-prettify">More prettify&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org (custom-set-faces!
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-1 :weight extra-bold :height &lt;span style="color:#ae81ff">1.25&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-2 :weight bold :height &lt;span style="color:#ae81ff">1.15&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-3 :weight bold :height &lt;span style="color:#ae81ff">1.12&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-4 :weight semi-bold :height &lt;span style="color:#ae81ff">1.09&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-5 :weight semi-bold :height &lt;span style="color:#ae81ff">1.06&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-6 :weight semi-bold :height &lt;span style="color:#ae81ff">1.03&lt;/span>)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-8 :weight semi-bold)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-9 :weight semi-bold)
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(org-document-title :height &lt;span style="color:#ae81ff">1.2&lt;/span>)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="keybinds-evil-org-overrides">Keybinds Evil-org overrides&lt;/h3>
-&lt;p>Just some annoying rebinds that I don&amp;rsquo;t want.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map! :map evil-org-mode-map
-:ei &lt;span style="color:#e6db74">&amp;#34;C-d&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>org-delete-char
-:ie &lt;span style="color:#e6db74">&amp;#34;C-h&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>embark-help-command
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="general-settings">General Settings&lt;/h2>
-&lt;p>Set line numbers and some various things I like to have.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq!
-display-line-numbers-type &lt;span style="color:#66d9ef">t&lt;/span>
-history-delete-duplicates &lt;span style="color:#66d9ef">t&lt;/span>
-elint-ignored-warnings &lt;span style="color:#f92672">&amp;#39;&lt;/span>(unbound-reference unbound-assignment)
-ediff-split-window-function &lt;span style="color:#e6db74">&amp;#39;split-window-horizontally&lt;/span>
-show-paren-style &lt;span style="color:#e6db74">&amp;#39;mixed&lt;/span>
-show-paren-when-point-in-periphery &lt;span style="color:#66d9ef">t&lt;/span>
-show-paren-when-point-inside-paren &lt;span style="color:#66d9ef">t&lt;/span>
-show-paren-delay &lt;span style="color:#ae81ff">0&lt;/span>
-kill-whole-line &lt;span style="color:#66d9ef">t&lt;/span>
-evil-move-cursor-back &lt;span style="color:#66d9ef">nil&lt;/span>
-evil-kill-on-visual-paste &lt;span style="color:#66d9ef">nil&lt;/span>
-evil-visual-region-expanded &lt;span style="color:#66d9ef">t&lt;/span>
-evil-want-fine-undo &lt;span style="color:#66d9ef">t&lt;/span>
-auto-save-default &lt;span style="color:#66d9ef">t&lt;/span>
-scroll-margin &lt;span style="color:#ae81ff">2&lt;/span>
-scroll-preserve-screen-position &lt;span style="color:#66d9ef">nil&lt;/span>
-scroll-conservatively &lt;span style="color:#ae81ff">1337&lt;/span>
-indent-tabs-mode &lt;span style="color:#66d9ef">nil&lt;/span>
-tab-width &lt;span style="color:#ae81ff">4&lt;/span>
-)
-(blink-cursor-mode &lt;span style="color:#66d9ef">t&lt;/span>)
-(setq display-time-24hr-format &lt;span style="color:#66d9ef">t&lt;/span>)
-(display-time-mode &lt;span style="color:#66d9ef">t&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="keybinds">Keybinds&lt;/h2>
-&lt;h3 id="mac-keybindings">Mac Keybindings&lt;/h3>
-&lt;ul>
-&lt;li>Mac specific keybinds (set &lt;code>fn&lt;/code> key to &lt;code>hyper&lt;/code>)&lt;/li>
-&lt;li>Also makes &lt;code>Super Left-Click&lt;/code> to &lt;code>Middle Click&lt;/code>&lt;/li>
-&lt;li>&lt;code>Super&lt;/code> is &lt;code>Command&lt;/code> on Mac.&lt;/li>
-&lt;/ul>
-&lt;!-- raw HTML omitted -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(when IS-MAC
-(setq! ns-function-modifier &lt;span style="color:#e6db74">&amp;#39;hyper&lt;/span>)
-(&lt;span style="color:#a6e22e">define-key&lt;/span> key-translation-map (kbd &lt;span style="color:#e6db74">&amp;#34;&amp;lt;s-mouse-1&amp;gt;&amp;#34;&lt;/span>) (kbd &lt;span style="color:#e6db74">&amp;#34;&amp;lt;mouse-2&amp;gt;&amp;#34;&lt;/span>)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="general-keybindings">General Keybindings&lt;/h3>
-&lt;p>I hate some of the remaps, so this puts it to how I like it/used to it from generic emacs.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map!
-:gni &lt;span style="color:#e6db74">&amp;#34;C-k&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>kill-line
-:i &lt;span style="color:#e6db74">&amp;#34;C-y&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>yank-from-kill-ring
-:gniv &lt;span style="color:#e6db74">&amp;#34;C-e&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>doom/forward-to-last-non-comment-or-eol
-:gniv &lt;span style="color:#e6db74">&amp;#34;C-a&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>doom/backward-to-bol-or-indent
-:n &lt;span style="color:#e6db74">&amp;#34;U&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>undo-tree-visualize
-:i &lt;span style="color:#e6db74">&amp;#34;C-U&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>undo-tree-visualize
-:gni &lt;span style="color:#e6db74">&amp;#34;C-d&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;delete-char&lt;/span>
-:i &lt;span style="color:#e6db74">&amp;#34;C-SPC&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>set-mark-command
-:i &lt;span style="color:#e6db74">&amp;#34;C-v&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>scroll-up-command
-:i &lt;span style="color:#e6db74">&amp;#34;C-x C-f&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>find-file
-:i &lt;span style="color:#e6db74">&amp;#34;C-w&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>kill-region
-:i &lt;span style="color:#e6db74">&amp;#34;C-x C-s&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>save-buffer)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>delete-char&lt;/code> doesn&amp;rsquo;t work in org-mode for some reason&amp;hellip; (as gei)&lt;/p>
-&lt;h3 id="editing-shortcuts">Editing shortcuts&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map!
-:gn &lt;span style="color:#e6db74">&amp;#34;H-l&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadlit
-:gn &lt;span style="color:#e6db74">&amp;#34;H-r&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/ffchez
-:gn &lt;span style="color:#e6db74">&amp;#34;H-z&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadzshlit
-:gn &lt;span style="color:#e6db74">&amp;#34;H-m&amp;#34;&lt;/span> (cmd! (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/.chezmoi.toml.tmpl&amp;#34;&lt;/span>)))
-:gn &lt;span style="color:#e6db74">&amp;#34;H-n&amp;#34;&lt;/span> (cmd! (doom-project-find-file &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/dot_config/nvim/&amp;#34;&lt;/span>))
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="whichkey">Whichkey&lt;/h3>
-&lt;h4 id="general-settings">General Settings&lt;/h4>
-&lt;ul>
-&lt;li>First faster pop-up&lt;/li>
-&lt;/ul>
-&lt;!-- raw HTML omitted -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! which-key
-(setq which-key-idle-delay &lt;span style="color:#ae81ff">0.5&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="customizations">Customizations&lt;/h4>
-&lt;ul>
-&lt;li>Remove redundant prefixes (stolen from &lt;a href="https://tecosaur.github.io/emacs-config/config.html#company">tecosaur&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;!-- raw HTML omitted -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq which-key-allow-multiple-replacements &lt;span style="color:#66d9ef">t&lt;/span>)
-(after! which-key
-(pushnew!
-which-key-replacement-alist
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)&amp;#34;&lt;/span>) &lt;span style="color:#f92672">.&lt;/span> (&lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;◂\\1&amp;#34;&lt;/span>))
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;\\`g s&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\`evilem--?motion-\\(.*\\)&amp;#34;&lt;/span>) &lt;span style="color:#f92672">.&lt;/span> (&lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;◃\\1&amp;#34;&lt;/span>))
-))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="file-modes">File Modes&lt;/h2>
-&lt;h3 id="vim">VIM&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! vimrc-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! vimrc-mode
-:defer &lt;span style="color:#66d9ef">t&lt;/span>
-:commands vimrc-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="salt">Salt&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! salt-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! salt-mode
-:defer &lt;span style="color:#66d9ef">t&lt;/span>
-:commands salt-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gitlab">Gitlab&lt;/h3>
-&lt;p>For &lt;code>.gitlabci&lt;/code> file&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! gitlab-ci-mode)
-(package! gitlab-ci-mode-flycheck)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! gitlab-ci-mode
-:defer &lt;span style="color:#66d9ef">t&lt;/span>
-:commands gitlab-ci-mode)
-(use-package! gitlab-ci-mode-flycheck
-:defer &lt;span style="color:#66d9ef">t&lt;/span>
-:commands gitlab-ci-mode-flycheck)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="puppet">Puppet&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! puppet-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! puppet-mode
-:defer &lt;span style="color:#66d9ef">t&lt;/span>
-:commands puppet-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jenkinsfile">Jenkinsfile&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! groovy-mode)
-(package! jenkinsfile-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! jenkinsfile-mode
-:commands jenkinsfile-mode)
-(use-package! groovy-mode
-:commands groovy-mode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="smart-parens">Smart Parens&lt;/h2>
-&lt;p>First thing is stop duplicates for quotes in vim, lisp, and org modes.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! smartparens (sp-local-pair &lt;span style="color:#f92672">&amp;#39;&lt;/span>(lisp-mode org-mode) &lt;span style="color:#e6db74">&amp;#34;`&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;`&amp;#34;&lt;/span> :actions &lt;span style="color:#66d9ef">nil&lt;/span>))
-(after! smartparens (sp-local-pair &lt;span style="color:#f92672">&amp;#39;&lt;/span>(lisp-mode org-mode) &lt;span style="color:#e6db74">&amp;#34;&amp;#39;&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#39;&amp;#34;&lt;/span> :actions &lt;span style="color:#66d9ef">nil&lt;/span>))
-(after! smartparens (sp-local-pair &lt;span style="color:#f92672">&amp;#39;&lt;/span>(vimrc-mode) &lt;span style="color:#e6db74">&amp;#34;\&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\&amp;#34;&amp;#34;&lt;/span> :actions &lt;span style="color:#66d9ef">nil&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="bracket-newline">Bracket newline&lt;/h2>
-&lt;p>Lets you put a newline and move the point when between brackets and such. Very helpful with things like HCL/Terraform.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun +ved/new-line-dwim ()
-(interactive)
-(let ((break-open-pair (or (and (looking-back &lt;span style="color:#e6db74">&amp;#34;{&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;}&amp;#34;&lt;/span>))
-(and (looking-back &lt;span style="color:#e6db74">&amp;#34;&amp;gt;&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;lt;&amp;#34;&lt;/span>))
-(and (looking-back &lt;span style="color:#e6db74">&amp;#34;(&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;)&amp;#34;&lt;/span>))
-(and (looking-back &lt;span style="color:#e6db74">&amp;#34;\\[&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\]&amp;#34;&lt;/span>)))))
-(newline)
-(when break-open-pair
-(save-excursion
-(newline)
-(indent-for-tab-command)))
-(indent-for-tab-command)))
-(map!
-:i &lt;span style="color:#e6db74">&amp;#34;M-RET&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/new-line-dwim)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="company">Company&lt;/h2>
-&lt;p>Customizations for company&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! company-ispell :disable &lt;span style="color:#66d9ef">t&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! company
-(set-company-backend! &lt;span style="color:#e6db74">&amp;#39;text-mode&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(:separate company-dabbrev company-yasnippet)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="company-box">Company Box&lt;/h3>
-&lt;p>Make the box appear less quickly&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! company-box
-(setq! company-box-doc-delay &lt;span style="color:#ae81ff">2&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="frame-dimensions">Frame dimensions&lt;/h2>
-&lt;p>See autoload.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook &lt;span style="color:#e6db74">&amp;#39;kill-emacs-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>my-save-frame-dimensions-h)
-(my-restore-frame-dimensions-h)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; autoload.el -*- lexical-binding: t; -*-&lt;/span>
-&lt;span style="color:#75715e">;;;###autoload&lt;/span>
-(defmacro unpackaged/def-org-maybe-surround (&lt;span style="color:#66d9ef">&amp;amp;rest&lt;/span> keys)
-&lt;span style="color:#e6db74">&amp;#34;Define and bind interactive commands for each of KEYS that surround the region or insert text.
-&lt;/span>&lt;span style="color:#e6db74">Commands are bound in &lt;/span>&lt;span style="color:#e6db74">`org-mode-map&amp;#39;&lt;/span>&lt;span style="color:#e6db74"> to each of KEYS. If the
-&lt;/span>&lt;span style="color:#e6db74">region is active, commands surround it with the key character,
-&lt;/span>&lt;span style="color:#e6db74">otherwise call &lt;/span>&lt;span style="color:#e6db74">`org-self-insert-command&amp;#39;&lt;/span>&lt;span style="color:#e6db74">.&amp;#34;&lt;/span>
-&lt;span style="color:#f92672">`&lt;/span>(progn
-&lt;span style="color:#f92672">,@&lt;/span>(cl-loop for key in keys
-for name &lt;span style="color:#a6e22e">=&lt;/span> (&lt;span style="color:#a6e22e">intern&lt;/span> (&lt;span style="color:#a6e22e">concat&lt;/span> &lt;span style="color:#e6db74">&amp;#34;unpackaged/org-maybe-surround-&amp;#34;&lt;/span> key))
-for docstring &lt;span style="color:#a6e22e">=&lt;/span> (&lt;span style="color:#a6e22e">format&lt;/span> &lt;span style="color:#e6db74">&amp;#34;If region is active, surround it with \&amp;#34;%s\&amp;#34;, otherwise call &lt;/span>&lt;span style="color:#e6db74">`org-self-insert-command&amp;#39;&lt;/span>&lt;span style="color:#e6db74">.&amp;#34;&lt;/span> key)
-collect &lt;span style="color:#f92672">`&lt;/span>(defun &lt;span style="color:#f92672">,&lt;/span>name ()
-&lt;span style="color:#f92672">,&lt;/span>docstring
-(interactive)
-(if (region-active-p)
-(let ((beg (&lt;span style="color:#a6e22e">region-beginning&lt;/span>))
-(end (&lt;span style="color:#a6e22e">region-end&lt;/span>)))
-(save-excursion
-(&lt;span style="color:#a6e22e">goto-char&lt;/span> end)
-(&lt;span style="color:#a6e22e">insert&lt;/span> &lt;span style="color:#f92672">,&lt;/span>key)
-(&lt;span style="color:#a6e22e">goto-char&lt;/span> beg)
-(&lt;span style="color:#a6e22e">insert&lt;/span> &lt;span style="color:#f92672">,&lt;/span>key)))
-(&lt;span style="color:#a6e22e">call-interactively&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>org-self-insert-command)))
-collect &lt;span style="color:#f92672">`&lt;/span>(&lt;span style="color:#a6e22e">define-key&lt;/span> org-mode-map (kbd &lt;span style="color:#f92672">,&lt;/span>key) &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>name))))
-&lt;span style="color:#75715e">;;;###autoload&lt;/span>
-(defun ap/org-mark-read-only ()
-&lt;span style="color:#e6db74">&amp;#34;Mark all entries in the buffer tagged \&amp;#34;read_only\&amp;#34; with read-only text properties.&amp;#34;&lt;/span>
-(interactive)
-(org-with-wide-buffer
-(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))
-(while (unpackaged/org-next-heading-tagged &lt;span style="color:#e6db74">&amp;#34;read_only&amp;#34;&lt;/span>)
-(&lt;span style="color:#a6e22e">add-text-properties&lt;/span> (&lt;span style="color:#a6e22e">point&lt;/span>) (progn
-(org-end-of-subtree)
-(&lt;span style="color:#a6e22e">point&lt;/span>))
-&lt;span style="color:#f92672">&amp;#39;&lt;/span>(read_only &lt;span style="color:#66d9ef">t&lt;/span>)))))
-&lt;span style="color:#75715e">;;;###autoload&lt;/span>
-(defun my-save-frame-dimensions-h ()
-&lt;span style="color:#e6db74">&amp;#34;Caches the current frame dimensions and position so we can
-&lt;/span>&lt;span style="color:#e6db74"> restore it when we launch emacs again.&amp;#34;&lt;/span>
-(if-let ((main-frame (&lt;span style="color:#a6e22e">car-safe&lt;/span> (&lt;span style="color:#a6e22e">visible-frame-list&lt;/span>))))
-(doom-store-put &lt;span style="color:#e6db74">&amp;#39;last-frame-size&lt;/span>
-(&lt;span style="color:#a6e22e">list&lt;/span> (frame-position main-frame)
-(frame-width main-frame)
-(frame-height main-frame)
-(&lt;span style="color:#a6e22e">frame-parameter&lt;/span> main-frame &lt;span style="color:#e6db74">&amp;#39;fullscreen&lt;/span>)))))
-&lt;span style="color:#75715e">;;;###autoload&lt;/span>
-(defun my-restore-frame-dimensions-h ()
-(if-let (dims (doom-store-get &lt;span style="color:#e6db74">&amp;#39;last-frame-size&lt;/span> &lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span>))
-(cl-destructuring-bind ((left &lt;span style="color:#f92672">.&lt;/span> top) width height fullscreen) dims
-(setq initial-frame-alist
-(&lt;span style="color:#a6e22e">append&lt;/span> initial-frame-alist
-&lt;span style="color:#f92672">`&lt;/span>((left &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>left)
-(top &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>top)
-(width &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>width)
-(height &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>height)
-(fullscreen &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>fullscreen)))))
-(add-to-list &lt;span style="color:#e6db74">&amp;#39;default-frame-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(height &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#ae81ff">52&lt;/span>))
-(add-to-list &lt;span style="color:#e6db74">&amp;#39;default-frame-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(width &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#ae81ff">105&lt;/span>))))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="my-lisp">My Lisp&lt;/h2>
-&lt;h3 id="timestamping">Timestamping&lt;/h3>
-&lt;p>Creates a timestamp line and modifies it as appropriate.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-load-path! &lt;span style="color:#e6db74">&amp;#34;mylisps/&amp;#34;&lt;/span>)
-(require &lt;span style="color:#e6db74">&amp;#39;ved-timestamping&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="projectile">Projectile&lt;/h2>
-&lt;p>Should be disabled, but just in case make it not update.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! projectile
-(setq projectile-auto-update-cache &lt;span style="color:#66d9ef">nil&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dash">Dash&lt;/h2>
-&lt;p>This is a document lookup tool for MacOS.&lt;/p>
-&lt;h3 id="install-package-if-macos">Install package if MacOS&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(when IS-MAC
-(package! dash-at-point))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-if-mac">Configure if mac&lt;/h3>
-&lt;ul>
-&lt;li>TODO Figure out what hyper is on linux&lt;/li>
-&lt;/ul>
-&lt;!-- raw HTML omitted -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(when IS-MAC
-(use-package! dash-at-point
-:commands (dash-at-point dash-at-point-with-docset))
-(add-to-list &lt;span style="color:#e6db74">&amp;#39;dash-at-point-mode-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(elisp-mode &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;elisp&amp;#34;&lt;/span>))
-(add-to-list &lt;span style="color:#e6db74">&amp;#39;dash-at-point-mode-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(nix-mode &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;nix&amp;#34;&lt;/span>))
-(add-to-list &lt;span style="color:#e6db74">&amp;#39;dash-at-point-mode-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(python-mode &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;py3&amp;#34;&lt;/span>))
-(map!
-:gni &lt;span style="color:#e6db74">&amp;#34;H-d&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;dash-at-point&lt;/span>
-:gni &lt;span style="color:#e6db74">&amp;#34;H-p&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;dash-at-point-with-docset&lt;/span>)
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unicode-font-stuff">Unicode Font Stuff&lt;/h2>
-&lt;p>Not sure if this is helping, still have missing ligatures.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(unicode-fonts-setup)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rainbow-delimeters-config">Rainbow Delimeters Config&lt;/h2>
-&lt;p>Lua doesn&amp;rsquo;t have it for some reason, so we set it up.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook! &lt;span style="color:#e6db74">&amp;#39;lua-mode-hook&lt;/span> (rainbow-delimiters-mode))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="editorconfig">Editorconfig&lt;/h2>
-&lt;h3 id="custom-major-modes">Custom major modes&lt;/h3>
-&lt;p>Mostly for work but sometimes things need it (like &lt;code>.tmpl&lt;/code> for &lt;code>chezmoi&lt;/code>)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! editorconfig-custom-majormode)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! editorconfig
-(use-package! editorconfig-custom-majormode))
-&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Test Post1</title><link>https://blog.evilolive.dev/posts/test1/</link><pubDate>Fri, 11 Feb 2022 23:50:00 -0700</pubDate><guid>https://blog.evilolive.dev/posts/test1/</guid><description>Content</description><content>&lt;p>Content&lt;/p></content></item><item><title>About</title><link>https://blog.evilolive.dev/about/</link><pubDate>Sun, 23 Jan 2022 15:10:00 -0700</pubDate><guid>https://blog.evilolive.dev/about/</guid><description>Fill this out Sorry</description><content>&lt;h2 id="fill-this-out">Fill this out&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vedevilolivedev Blog</title><link>https://blog.evilolive.dev/</link><description>Recent content on vedevilolivedev Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Feb 2022 23:50:00 -0700</lastBuildDate><atom:link href="https://blog.evilolive.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Test Post1</title><link>https://blog.evilolive.dev/posts/test1/</link><pubDate>Fri, 11 Feb 2022 23:50:00 -0700</pubDate><guid>https://blog.evilolive.dev/posts/test1/</guid><description>Content</description><content>&lt;p>Content&lt;/p></content></item><item><title>About</title><link>https://blog.evilolive.dev/about/</link><pubDate>Sun, 23 Jan 2022 15:10:00 -0700</pubDate><guid>https://blog.evilolive.dev/about/</guid><description>Fill this out Sorry</description><content>&lt;h2 id="fill-this-out">Fill this out&lt;/h2>
 &lt;p>Sorry&lt;/p></content></item><item><title/><link>https://blog.evilolive.dev/configs/my-lit-doom-config/all-posts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-doom-config/all-posts/</guid><description>DONEAbout Fill this out Sorry
 DONETest Post1 Content
 YESDoom Config Headers ;;; config.el -*- lexical-binding: t; -*- ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*- User info The real version has the proper info obviously.
@@ -1198,6 +631,576 @@ collect &lt;span style="color:#f92672">`&lt;/span>(&lt;span style="color:#a6e22e
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook! &lt;span style="color:#e6db74">&amp;#39;lua-mode-hook&lt;/span> (rainbow-delimiters-mode))
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="editorconfig">Editorconfig&lt;/h3>
 &lt;h4 id="custom-major-modes">Custom major modes&lt;/h4>
+&lt;p>Mostly for work but sometimes things need it (like &lt;code>.tmpl&lt;/code> for &lt;code>chezmoi&lt;/code>)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! editorconfig-custom-majormode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! editorconfig
+(use-package! editorconfig-custom-majormode
+:config (add-hook! &lt;span style="color:#e6db74">&amp;#39;editorconfig-custom-hooks&lt;/span>
+&lt;span style="color:#e6db74">&amp;#39;editorconfig-custom-majormode&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Doom Config</title><link>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</guid><description>Headers ;;; config.el -*- lexical-binding: t; -*- ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*- User info The real version has the proper info obviously.
+(setq user-full-name &amp;#34;redacted&amp;#34; user-mail-address &amp;#34;redacted&amp;#34;) GPG/Security setup Set the settings for authorization/passwords. Don&amp;rsquo;t really use this but set anyway.
+(setq auth-sources &amp;#39;(&amp;#34;~/.authinfo.gpg&amp;#34;)) System-specific Hostnames hidden here. But they look like
+(defconst HOSTNAME (string-equal (system-name) &amp;#34;hostname&amp;#34;)) UI Scrolling Perhaps reduce flickering/help with speed on retina. See https://discourse.</description><content>&lt;h2 id="headers">Headers&lt;/h2>
+&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; config.el -*- lexical-binding: t; -*-&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*-&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="user-info">User info&lt;/h2>
+&lt;p>The real version has the proper info obviously.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq &lt;span style="color:#a6e22e">user-full-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;redacted&amp;#34;&lt;/span>
+user-mail-address &lt;span style="color:#e6db74">&amp;#34;redacted&amp;#34;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gpg-security-setup">GPG/Security setup&lt;/h2>
+&lt;p>Set the settings for authorization/passwords. Don&amp;rsquo;t really use this but set anyway.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq auth-sources &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;~/.authinfo.gpg&amp;#34;&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="system-specific">System-specific&lt;/h2>
+&lt;p>Hostnames hidden here. But they look like&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defconst HOSTNAME (&lt;span style="color:#a6e22e">string-equal&lt;/span> (&lt;span style="color:#a6e22e">system-name&lt;/span>) &lt;span style="color:#e6db74">&amp;#34;hostname&amp;#34;&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ui">UI&lt;/h2>
+&lt;h3 id="scrolling">Scrolling&lt;/h3>
+&lt;p>Perhaps reduce flickering/help with speed on retina. See &lt;a href="https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83/3">https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83/3&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;; (add-to-list &amp;#39;default-frame-alist &amp;#39;(inhibit-double-buffering . t))&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="dashboard">Dashboard&lt;/h3>
+&lt;h4 id="fancy-splash-image">Fancy splash image&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq fancy-splash-image (&lt;span style="color:#a6e22e">concat&lt;/span> doom-private-dir &lt;span style="color:#e6db74">&amp;#34;/splash/doomslant.png&amp;#34;&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="utility-functions">Utility Functions&lt;/h4>
+&lt;p>These functions are also a convenience one so don&amp;rsquo;t have to repeat them.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun +ved/loadlit ()
+&lt;span style="color:#e6db74">&amp;#34;Load the lit.org from ~/.doom.d or whatever the private dir is.&amp;#34;&lt;/span>
+(interactive)
+(find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lit.org&amp;#34;&lt;/span> doom-private-dir)))
+(defun +ved/ffchez ()
+(interactive)
+&lt;span style="color:#e6db74">&amp;#34;Explore the chezmoi dotfiles directory since this is frequented.&amp;#34;&lt;/span>
+(doom-project-find-file &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/&amp;#34;&lt;/span>))
+(defun +ved/loadzshlit ()
+(interactive)
+&lt;span style="color:#e6db74">&amp;#34;Open the ZSH literate config file.&amp;#34;&lt;/span>
+(find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/ZSH-lit.org&amp;#34;&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="change-the-mapping">Change the mapping&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map! :map +doom-dashboard-mode-map
+:ne &lt;span style="color:#e6db74">&amp;#34;f&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>find-file
+:ne &lt;span style="color:#e6db74">&amp;#34;r&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>consult-recent-file
+:ne &lt;span style="color:#e6db74">&amp;#34;p&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>doom/open-private-config
+:ne &lt;span style="color:#e6db74">&amp;#34;l&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadlit
+:ne &lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/ffchez
+:ne &lt;span style="color:#e6db74">&amp;#34;z&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadzshlit
+:ne &lt;span style="color:#e6db74">&amp;#34;B&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>consult-buffer
+:ne &lt;span style="color:#e6db74">&amp;#34;q&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>save-buffers-kill-terminal)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="menu-change">Menu Change&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq +doom-dashboard-menu-sections
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;Open File&amp;#34;&lt;/span>
+:icon (all-the-icons-octicon &lt;span style="color:#e6db74">&amp;#34;file-text&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
+:action find-file)
+(&lt;span style="color:#e6db74">&amp;#34;Recently Opened Files&amp;#34;&lt;/span>
+:icon (all-the-icons-octicon &lt;span style="color:#e6db74">&amp;#34;history&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
+:action recentf-open-files)
+(&lt;span style="color:#e6db74">&amp;#34;Open EMACS Config Dir&amp;#34;&lt;/span>
+:icon (all-the-icons-faicon &lt;span style="color:#e6db74">&amp;#34;folder-open-o&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
+:action doom/open-private-config)
+(&lt;span style="color:#e6db74">&amp;#34;Open EMACS Literate ORG File&amp;#34;&lt;/span>
+:icon (all-the-icons-fileicon &lt;span style="color:#e6db74">&amp;#34;emacs&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
+:action +ved/loadlit)
+(&lt;span style="color:#e6db74">&amp;#34;Open ZSH Literate File&amp;#34;&lt;/span>
+:icon (all-the-icons-fileicon &lt;span style="color:#e6db74">&amp;#34;org&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
+:action +ved/loadzshlit)
+(&lt;span style="color:#e6db74">&amp;#34;Open Chezmoi Dotfiles Dir&amp;#34;&lt;/span>
+:icon (all-the-icons-octicon &lt;span style="color:#e6db74">&amp;#34;home&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
+:action +ved/ffchez)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="better-buffer-name">Better Buffer Name&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq +doom-dashboard-name &lt;span style="color:#e6db74">&amp;#34; Doom&amp;#34;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="font">Font&lt;/h3>
+&lt;p>Still trying to figure out which I like best.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq doom-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;FiraMono Nerd Font&amp;#34;&lt;/span> :size &lt;span style="color:#ae81ff">13&lt;/span>)
+doom-big-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;FiraMono Nerd Font&amp;#34;&lt;/span> :size &lt;span style="color:#ae81ff">18&lt;/span>)
+doom-variable-pitch-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;FiraCode Nerd Font&amp;#34;&lt;/span> :size &lt;span style="color:#ae81ff">13&lt;/span>)
+doom-serif-font (&lt;span style="color:#a6e22e">font-spec&lt;/span> :family &lt;span style="color:#e6db74">&amp;#34;CodeNewRoman Nerd Font&amp;#34;&lt;/span> :weight &lt;span style="color:#e6db74">&amp;#39;regular&lt;/span>)
+doom-unicode-font doom-font)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="theme">Theme&lt;/h3>
+&lt;p>Unpin doom-themes&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(unpin! doom-themes)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Got this for in case I start using one config for two computers. Maybe remove this.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;(when CRIUS (setq doom-theme &amp;#39;doom-outrun-electric))&lt;/span>
+(setq doom-theme &lt;span style="color:#e6db74">&amp;#39;doom-tokyo-night&lt;/span>)
+(setq doom-tokyo-night-padded-modeline &lt;span style="color:#ae81ff">4&lt;/span>)
+&lt;span style="color:#75715e">;; (setq! doom-outrun-electric-brighter-comments t)&lt;/span>
+&lt;span style="color:#75715e">;; (when DENM (setq doom-theme &amp;#39;doom-dracula))&lt;/span>
+&lt;span style="color:#75715e">;; (when (eq doom-theme &amp;#39;doom-dracula)&lt;/span>
+&lt;span style="color:#75715e">;; (setq! doom-dracula-colorful-headers t))&lt;/span>
+(setq! doom-themes-padded-modeline &lt;span style="color:#66d9ef">t&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modeline-settings">Modeline Settings&lt;/h3>
+&lt;p>So it doesnt bump up all the way against the frame. Still might need some padding.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq!
+doom-modeline-buffer-file-name-style &lt;span style="color:#e6db74">&amp;#39;truncate-upto-root&lt;/span>
+doom-modeline-major-mode-icon &lt;span style="color:#66d9ef">t&lt;/span>
+doom-modeline-major-mode-color-icon &lt;span style="color:#66d9ef">t&lt;/span>
+doom-modeline-buffer-encoding &lt;span style="color:#66d9ef">nil&lt;/span>
+doom-modeline-workspace-name &lt;span style="color:#66d9ef">nil&lt;/span>
+doom-modeline-persp-name &lt;span style="color:#66d9ef">nil&lt;/span>
+doom-modeline-indent-info &lt;span style="color:#66d9ef">t&lt;/span>
+all-the-icons-scale-factor &lt;span style="color:#ae81ff">1.1&lt;/span>
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="nyan-mode">Nyan Mode&lt;/h4>
+&lt;p>Always must have.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! nyan-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! nyan-mode
+:after doom-modeline
+:config
+(nyan-mode)
+:custom
+(nyan-animate-nyancat &lt;span style="color:#66d9ef">t&lt;/span>)
+(nyan-wavy-trail &lt;span style="color:#66d9ef">t&lt;/span>)
+(nyan-bar-length &lt;span style="color:#ae81ff">27&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="set-indicator-colors-in-modeline">Set indicator colors in modeline&lt;/h4>
+&lt;p>I like these to also match the cursor, so below is about the same colors (some adjustments for visibility).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(custom-set-faces!
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(doom-modeline-evil-insert-state :foreground &lt;span style="color:#e6db74">&amp;#34;#00eeee&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(doom-modeline-evil-normal-state :foreground &lt;span style="color:#e6db74">&amp;#34;#Cd5555&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(doom-modeline-evil-visual-state :foreground &lt;span style="color:#e6db74">&amp;#34;#6c7b8b&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(match :foreground &lt;span style="color:#e6db74">&amp;#34;#000000&amp;#34;&lt;/span> :background &lt;span style="color:#e6db74">&amp;#34;#ff02ab&amp;#34;&lt;/span>)
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>
+&lt;p>Matching cursor&lt;/p>
+&lt;p>Except visual cause otherwise it&amp;rsquo;s hard to see sometimes&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq! evil-normal-state-cursor &lt;span style="color:#f92672">&amp;#39;&lt;/span>(box &lt;span style="color:#e6db74">&amp;#34;#Ee0000&amp;#34;&lt;/span>)
+evil-insert-state-cursor &lt;span style="color:#f92672">&amp;#39;&lt;/span>(box &lt;span style="color:#e6db74">&amp;#34;#00eeee&amp;#34;&lt;/span>)
+evil-visual-state-cursor &lt;span style="color:#f92672">&amp;#39;&lt;/span>((hbar &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>) &lt;span style="color:#e6db74">&amp;#34;#Ee1289&amp;#34;&lt;/span>)
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="linenumber-colors">Linenumber colors&lt;/h3>
+&lt;p>Defaults for electric were too dark, so changing it here.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! display-line-numbers
+(custom-set-faces!
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(line-number :foreground &lt;span style="color:#e6db74">&amp;#34;#6C7B8B&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(line-number-current-line :foreground &lt;span style="color:#e6db74">&amp;#34;#FFFFFF&amp;#34;&lt;/span> :weight bold)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="beacon">Beacon&lt;/h3>
+&lt;p>Highlights the point when scrolling and changing windows and such&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! beacon)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! beacon
+:config
+(beacon-mode &lt;span style="color:#66d9ef">t&lt;/span>)
+(setq! beacon-color &lt;span style="color:#e6db74">&amp;#34;#ee1289&amp;#34;&lt;/span>
+beacon-blink-delay &lt;span style="color:#ae81ff">0.3&lt;/span>
+beacon-blink-duration &lt;span style="color:#ae81ff">0.5&lt;/span>
+beacon-blink-when-focused &lt;span style="color:#66d9ef">t&lt;/span>)
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rainbow-mode">Rainbow Mode&lt;/h3>
+&lt;p>Show background of colors when colors are set.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! rainbow-mode
+:defer &lt;span style="color:#66d9ef">t&lt;/span>
+:hook ((text-mode prog-mode) &lt;span style="color:#f92672">.&lt;/span> rainbow-mode))
+(add-hook! &lt;span style="color:#e6db74">&amp;#39;rainbow-mode-hook&lt;/span> (hl-line-mode (if rainbow-mode &lt;span style="color:#ae81ff">-1&lt;/span> &lt;span style="color:#ae81ff">+1&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="fix-color-menu">Fix color menu&lt;/h4>
+&lt;p>MacOS misses the thing that does colors like DeepPink2 in the menu. This fixes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(require &lt;span style="color:#e6db74">&amp;#39;facemenu&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="show-parens">Show Parens&lt;/h3>
+&lt;p>Sets the colors for show parens&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(custom-set-faces!
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(show-paren-match :foreground &lt;span style="color:#e6db74">&amp;#34;#2f4f4f&amp;#34;&lt;/span> :background &lt;span style="color:#e6db74">&amp;#34;#00ee00&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(show-paren-mismatch :background &lt;span style="color:#e6db74">&amp;#34;#ee0000&amp;#34;&lt;/span> :foreground &lt;span style="color:#e6db74">&amp;#34;#fffc00&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(show-paren-match-expression :background &lt;span style="color:#e6db74">&amp;#34;#00868b&amp;#34;&lt;/span> :foreground &lt;span style="color:#e6db74">&amp;#34;#ffffff&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(match :foreground &lt;span style="color:#e6db74">&amp;#34;#000000&amp;#34;&lt;/span> :background &lt;span style="color:#e6db74">&amp;#34;#Ff82ab&amp;#34;&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="org">Org&lt;/h2>
+&lt;p>First need to set the org directory&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-directory &lt;span style="color:#e6db74">&amp;#34;~/org/&amp;#34;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="allow-encryption-in-org-files">Allow encryption in org files&lt;/h3>
+&lt;p>This version has my email redacted&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp"> (use-package! org-crypt
+:after org
+:config
+(setq! org-tags-exclude-from-inheritance &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;crypt&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;read_only&amp;#34;&lt;/span>)
+org-crypt-key &lt;span style="color:#e6db74">&amp;#34;redacted&amp;#34;&lt;/span>
+org-crypt-disable-auto-save &lt;span style="color:#e6db74">&amp;#34;ask&amp;#34;&lt;/span>)
+:init
+(org-crypt-use-before-save-magic)
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="read-only-sections">Read-only sections&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun unpackaged/org-next-heading-tagged (tag)
+&lt;span style="color:#e6db74">&amp;#34;Move to beginning of next heading tagged with TAG and return point, or return nil if none found.&amp;#34;&lt;/span>
+(when (&lt;span style="color:#a6e22e">re-search-forward&lt;/span> (rx-to-string &lt;span style="color:#f92672">`&lt;/span>(seq bol (&lt;span style="color:#a6e22e">1+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">1+&lt;/span> blank) (optional (&lt;span style="color:#a6e22e">1+&lt;/span> not-newline) (&lt;span style="color:#a6e22e">1+&lt;/span> blank))
+&lt;span style="color:#75715e">;; Beginning of tags&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>
+&lt;span style="color:#75715e">;; Possible other tags&lt;/span>
+(0+ (seq (&lt;span style="color:#a6e22e">1+&lt;/span> (not (any &lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span> blank))) &lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>) )
+&lt;span style="color:#75715e">;; The tag that matters&lt;/span>
+&lt;span style="color:#f92672">,&lt;/span>tag &lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>))
+&lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#e6db74">&amp;#39;noerror&lt;/span>)
+(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">match-beginning&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>))))
+(defun ap/org-remove-read-only ()
+&lt;span style="color:#e6db74">&amp;#34;Remove read-only text properties from Org entries tagged \&amp;#34;read_only\&amp;#34; in current buffer.&amp;#34;&lt;/span>
+(let ((inhibit-read-only &lt;span style="color:#66d9ef">t&lt;/span>))
+(org-with-wide-buffer
+(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))
+(while (unpackaged/org-next-heading-tagged &lt;span style="color:#e6db74">&amp;#34;read_only&amp;#34;&lt;/span>)
+(&lt;span style="color:#a6e22e">remove-text-properties&lt;/span> (&lt;span style="color:#a6e22e">point&lt;/span>) (progn
+(org-end-of-subtree)
+(&lt;span style="color:#a6e22e">point&lt;/span>))
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(read_only &lt;span style="color:#66d9ef">t&lt;/span>))))))
+(add-hook! &lt;span style="color:#e6db74">&amp;#39;org-mode-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>ap/org-mark-read-only)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ligatures">Ligatures&lt;/h3>
+&lt;p>Some customizatons and additions&lt;/p>
+&lt;h4 id="org">Org&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp"> (appendq! +ligatures-extra-symbols
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(:title &lt;span style="color:#e6db74">&amp;#34;T&amp;#34;&lt;/span>
+:subtitle &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+:author &lt;span style="color:#e6db74">&amp;#34;Ⓐ&amp;#34;&lt;/span>
+:property &lt;span style="color:#e6db74">&amp;#34;∹&amp;#34;&lt;/span>
+:name &lt;span style="color:#e6db74">&amp;#34;⒩&amp;#34;&lt;/span>
+:emptycheck &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+:checkedbox &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+:partialbox &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+:email &lt;span style="color:#e6db74">&amp;#34;﫯&amp;#34;&lt;/span>
+))
+(set-ligatures! &lt;span style="color:#e6db74">&amp;#39;org-mode&lt;/span>
+:merge &lt;span style="color:#66d9ef">t&lt;/span>
+:title &lt;span style="color:#e6db74">&amp;#34;#+TITLE:&amp;#34;&lt;/span>
+:title &lt;span style="color:#e6db74">&amp;#34;#+title:&amp;#34;&lt;/span>
+:subtitle &lt;span style="color:#e6db74">&amp;#34;#+SUBTITLE:&amp;#34;&lt;/span>
+:subtitle &lt;span style="color:#e6db74">&amp;#34;#+subtitle:&amp;#34;&lt;/span>
+:author &lt;span style="color:#e6db74">&amp;#34;#+AUTHOR:&amp;#34;&lt;/span>
+:author &lt;span style="color:#e6db74">&amp;#34;#+author:&amp;#34;&lt;/span>
+:property &lt;span style="color:#e6db74">&amp;#34;#+PROPERTY:&amp;#34;&lt;/span>
+:property &lt;span style="color:#e6db74">&amp;#34;#+property:&amp;#34;&lt;/span>
+:name &lt;span style="color:#e6db74">&amp;#34;#+NAME:&amp;#34;&lt;/span>
+:name &lt;span style="color:#e6db74">&amp;#34;#+name:&amp;#34;&lt;/span>
+:emptycheck &lt;span style="color:#e6db74">&amp;#34;[ ]&amp;#34;&lt;/span>
+:checkedbox &lt;span style="color:#e6db74">&amp;#34;[X]&amp;#34;&lt;/span>
+:partialbox &lt;span style="color:#e6db74">&amp;#34;[-]&amp;#34;&lt;/span>
+:email &lt;span style="color:#e6db74">&amp;#34;#+email:&amp;#34;&lt;/span>
+:email &lt;span style="color:#e6db74">&amp;#34;#+EMAIL:&amp;#34;&lt;/span>
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="general">General&lt;/h4>
+&lt;p>Fix some that don&amp;rsquo;t show up on Mac for some fucking reason.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(plist-put! +ligatures-extra-symbols
+:true &lt;span style="color:#e6db74">&amp;#34;⊨&amp;#34;&lt;/span>
+:false &lt;span style="color:#e6db74">&amp;#34;⊭&amp;#34;&lt;/span>
+:str &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+:bool &lt;span style="color:#e6db74">&amp;#34;ℬ&amp;#34;&lt;/span>
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="templates">Templates&lt;/h3>
+&lt;p>I&amp;rsquo;ve got my own templates I like to use.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(set-file-template! &lt;span style="color:#e6db74">&amp;#34;/\\(?:Sources/.*\\|README\\)\\.org$&amp;#34;&lt;/span>
+:trigger &lt;span style="color:#e6db74">&amp;#34;__head&amp;#34;&lt;/span>
+:mode &lt;span style="color:#e6db74">&amp;#39;org-mode&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="org-appear">Org Appear&lt;/h3>
+&lt;p>This makes org things show when the point is near/in it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! org-appear)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! org-appear
+:hook (org-mode &lt;span style="color:#f92672">.&lt;/span> org-appear-mode)
+:config
+(setq! org-appear-autoemphasis &lt;span style="color:#66d9ef">t&lt;/span>
+org-appear-autosubmarkers &lt;span style="color:#66d9ef">t&lt;/span>
+)
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="general-org-settings">General Org Settings&lt;/h3>
+&lt;p>Hide the markers, inherit properties (I think that&amp;rsquo;s needed for the read-only/encryption one), add time to agenda done (not that I use it).
+I forget what invisible-edits does.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org
+(setq
+org-use-property-inheritance &lt;span style="color:#66d9ef">t&lt;/span>
+org-log-done &lt;span style="color:#e6db74">&amp;#39;time&lt;/span>
+org-catch-invisible-edits &lt;span style="color:#e6db74">&amp;#39;smart&lt;/span>
+&lt;span style="color:#75715e">;; org-export-with-sub-superscripts &amp;#39;{}&lt;/span>
+org-ellipsis &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+org-support-shift-select &lt;span style="color:#66d9ef">t&lt;/span>
+org-hide-emphasis-markers &lt;span style="color:#66d9ef">t&lt;/span>
+org-id-link-to-org-use-id &lt;span style="color:#e6db74">&amp;#39;create-if-interactive-and-no-custom-id&lt;/span>
+)
+(add-hook! org-mode (electric-indent-local-mode &lt;span style="color:#ae81ff">-1&lt;/span>)))
+(global-prettify-symbols-mode &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="org-reformat-buffer">Org reformat buffer&lt;/h3>
+&lt;p>&lt;a href="https://github.com/zzamboni/dot-doom/blob/master/doom.org#visual-session-and-window-settings">https://github.com/zzamboni/dot-doom/blob/master/doom.org#visual-session-and-window-settings&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org (defun zz/org-reformat-buffer ()
+(interactive)
+(when (y-or-n-p &lt;span style="color:#e6db74">&amp;#34;Really format current buffer? &amp;#34;&lt;/span>)
+(let ((document (org-element-interpret-data (org-element-parse-buffer))))
+(&lt;span style="color:#a6e22e">erase-buffer&lt;/span>)
+(&lt;span style="color:#a6e22e">insert&lt;/span> document)
+(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="disable-company-in-org">Disable Company in Org&lt;/h3>
+&lt;p>It&amp;rsquo;s annoying&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp"> (after! company (defun ved/org-mode-hook()
+(when (featurep! :completion company)
+(&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Disabling company-mode while in org-capture...&amp;#34;&lt;/span>)
+(company-mode &lt;span style="color:#ae81ff">-1&lt;/span>))))
+(after! org (add-hook! org-capture-mode (ved/org-mode-hook)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="auto-tangle">Auto-Tangle&lt;/h3>
+&lt;p>Save some effort. Requires you put a property, unless you set &lt;code>org-auto-tangle-default&lt;/code> to true. Otherwise use &lt;code>#+auto_tangle: t&lt;/code> at the top.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! org-auto-tangle)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! org-auto-tangle
+:defer &lt;span style="color:#66d9ef">t&lt;/span>
+:hook (org-mode &lt;span style="color:#f92672">.&lt;/span> org-auto-tangle-mode))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="org-ui">ORG UI&lt;/h3>
+&lt;p>Setting up org stuff to get it to look better I guess.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org
+(add-hook! &lt;span style="color:#e6db74">&amp;#39;org-mode-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>mixed-pitch-mode)
+(add-hook! &lt;span style="color:#e6db74">&amp;#39;org-mode-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>solaire-mode)
+(setq mixed-pitch-variable-pitch-cursor &lt;span style="color:#66d9ef">nil&lt;/span>))
+(after! org-superstar
+(setq org-superstar-prettify-item-bullets &lt;span style="color:#66d9ef">t&lt;/span>)
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="more-prettify">More prettify&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! org (custom-set-faces!
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-1 :weight extra-bold :height &lt;span style="color:#ae81ff">1.25&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-2 :weight bold :height &lt;span style="color:#ae81ff">1.15&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-3 :weight bold :height &lt;span style="color:#ae81ff">1.12&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-4 :weight semi-bold :height &lt;span style="color:#ae81ff">1.09&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-5 :weight semi-bold :height &lt;span style="color:#ae81ff">1.06&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-6 :weight semi-bold :height &lt;span style="color:#ae81ff">1.03&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-8 :weight semi-bold)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(outline-9 :weight semi-bold)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(org-document-title :height &lt;span style="color:#ae81ff">1.2&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="keybinds-evil-org-overrides">Keybinds Evil-org overrides&lt;/h3>
+&lt;p>Just some annoying rebinds that I don&amp;rsquo;t want.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map! :map evil-org-mode-map
+:ei &lt;span style="color:#e6db74">&amp;#34;C-d&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>org-delete-char
+:ie &lt;span style="color:#e6db74">&amp;#34;C-h&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>embark-help-command
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="general-settings">General Settings&lt;/h2>
+&lt;p>Set line numbers and some various things I like to have.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq!
+display-line-numbers-type &lt;span style="color:#66d9ef">t&lt;/span>
+history-delete-duplicates &lt;span style="color:#66d9ef">t&lt;/span>
+elint-ignored-warnings &lt;span style="color:#f92672">&amp;#39;&lt;/span>(unbound-reference unbound-assignment)
+ediff-split-window-function &lt;span style="color:#e6db74">&amp;#39;split-window-horizontally&lt;/span>
+show-paren-style &lt;span style="color:#e6db74">&amp;#39;mixed&lt;/span>
+show-paren-when-point-in-periphery &lt;span style="color:#66d9ef">t&lt;/span>
+show-paren-when-point-inside-paren &lt;span style="color:#66d9ef">t&lt;/span>
+show-paren-delay &lt;span style="color:#ae81ff">0&lt;/span>
+kill-whole-line &lt;span style="color:#66d9ef">t&lt;/span>
+evil-move-cursor-back &lt;span style="color:#66d9ef">nil&lt;/span>
+evil-kill-on-visual-paste &lt;span style="color:#66d9ef">nil&lt;/span>
+evil-visual-region-expanded &lt;span style="color:#66d9ef">t&lt;/span>
+evil-want-fine-undo &lt;span style="color:#66d9ef">t&lt;/span>
+auto-save-default &lt;span style="color:#66d9ef">t&lt;/span>
+scroll-margin &lt;span style="color:#ae81ff">2&lt;/span>
+scroll-preserve-screen-position &lt;span style="color:#66d9ef">nil&lt;/span>
+scroll-conservatively &lt;span style="color:#ae81ff">1337&lt;/span>
+indent-tabs-mode &lt;span style="color:#66d9ef">nil&lt;/span>
+tab-width &lt;span style="color:#ae81ff">4&lt;/span>
+)
+(blink-cursor-mode &lt;span style="color:#66d9ef">t&lt;/span>)
+(setq display-time-24hr-format &lt;span style="color:#66d9ef">t&lt;/span>)
+(display-time-mode &lt;span style="color:#66d9ef">t&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="keybinds">Keybinds&lt;/h2>
+&lt;h3 id="mac-keybindings">Mac Keybindings&lt;/h3>
+&lt;ul>
+&lt;li>Mac specific keybinds (set &lt;code>fn&lt;/code> key to &lt;code>hyper&lt;/code>)&lt;/li>
+&lt;li>Also makes &lt;code>Super Left-Click&lt;/code> to &lt;code>Middle Click&lt;/code>&lt;/li>
+&lt;li>&lt;code>Super&lt;/code> is &lt;code>Command&lt;/code> on Mac.&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(when IS-MAC
+(setq! ns-function-modifier &lt;span style="color:#e6db74">&amp;#39;hyper&lt;/span>)
+(&lt;span style="color:#a6e22e">define-key&lt;/span> key-translation-map (kbd &lt;span style="color:#e6db74">&amp;#34;&amp;lt;s-mouse-1&amp;gt;&amp;#34;&lt;/span>) (kbd &lt;span style="color:#e6db74">&amp;#34;&amp;lt;mouse-2&amp;gt;&amp;#34;&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="general-keybindings">General Keybindings&lt;/h3>
+&lt;p>I hate some of the remaps, so this puts it to how I like it/used to it from generic emacs.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map!
+:gni &lt;span style="color:#e6db74">&amp;#34;C-k&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>kill-line
+:i &lt;span style="color:#e6db74">&amp;#34;C-y&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>yank-from-kill-ring
+:gniv &lt;span style="color:#e6db74">&amp;#34;C-e&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>doom/forward-to-last-non-comment-or-eol
+:gniv &lt;span style="color:#e6db74">&amp;#34;C-a&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>doom/backward-to-bol-or-indent
+:n &lt;span style="color:#e6db74">&amp;#34;U&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>undo-tree-visualize
+:i &lt;span style="color:#e6db74">&amp;#34;C-U&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>undo-tree-visualize
+:gni &lt;span style="color:#e6db74">&amp;#34;C-d&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;delete-char&lt;/span>
+:i &lt;span style="color:#e6db74">&amp;#34;C-SPC&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>set-mark-command
+:i &lt;span style="color:#e6db74">&amp;#34;C-v&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>scroll-up-command
+:i &lt;span style="color:#e6db74">&amp;#34;C-x C-f&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>find-file
+:i &lt;span style="color:#e6db74">&amp;#34;C-w&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>kill-region
+:i &lt;span style="color:#e6db74">&amp;#34;C-x C-s&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>save-buffer)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>delete-char&lt;/code> doesn&amp;rsquo;t work in org-mode for some reason&amp;hellip; (as gei)&lt;/p>
+&lt;h3 id="editing-shortcuts">Editing shortcuts&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(map!
+:gn &lt;span style="color:#e6db74">&amp;#34;H-l&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadlit
+:gn &lt;span style="color:#e6db74">&amp;#34;H-r&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/ffchez
+:gn &lt;span style="color:#e6db74">&amp;#34;H-z&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadzshlit
+:gn &lt;span style="color:#e6db74">&amp;#34;H-m&amp;#34;&lt;/span> (cmd! (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/.chezmoi.toml.tmpl&amp;#34;&lt;/span>)))
+:gn &lt;span style="color:#e6db74">&amp;#34;H-n&amp;#34;&lt;/span> (cmd! (doom-project-find-file &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/dot_config/nvim/&amp;#34;&lt;/span>))
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="whichkey">Whichkey&lt;/h3>
+&lt;h4 id="general-settings">General Settings&lt;/h4>
+&lt;ul>
+&lt;li>First faster pop-up&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! which-key
+(setq which-key-idle-delay &lt;span style="color:#ae81ff">0.5&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="customizations">Customizations&lt;/h4>
+&lt;ul>
+&lt;li>Remove redundant prefixes (stolen from &lt;a href="https://tecosaur.github.io/emacs-config/config.html#company">tecosaur&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq which-key-allow-multiple-replacements &lt;span style="color:#66d9ef">t&lt;/span>)
+(after! which-key
+(pushnew!
+which-key-replacement-alist
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)&amp;#34;&lt;/span>) &lt;span style="color:#f92672">.&lt;/span> (&lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;◂\\1&amp;#34;&lt;/span>))
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;\\`g s&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\`evilem--?motion-\\(.*\\)&amp;#34;&lt;/span>) &lt;span style="color:#f92672">.&lt;/span> (&lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;◃\\1&amp;#34;&lt;/span>))
+))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="file-modes">File Modes&lt;/h2>
+&lt;h3 id="vim">VIM&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! vimrc-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! vimrc-mode
+:defer &lt;span style="color:#66d9ef">t&lt;/span>
+:commands vimrc-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="salt">Salt&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! salt-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! salt-mode
+:defer &lt;span style="color:#66d9ef">t&lt;/span>
+:commands salt-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gitlab">Gitlab&lt;/h3>
+&lt;p>For &lt;code>.gitlabci&lt;/code> file&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! gitlab-ci-mode)
+(package! gitlab-ci-mode-flycheck)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! gitlab-ci-mode
+:defer &lt;span style="color:#66d9ef">t&lt;/span>
+:commands gitlab-ci-mode)
+(use-package! gitlab-ci-mode-flycheck
+:defer &lt;span style="color:#66d9ef">t&lt;/span>
+:commands gitlab-ci-mode-flycheck)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="puppet">Puppet&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! puppet-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! puppet-mode
+:defer &lt;span style="color:#66d9ef">t&lt;/span>
+:commands puppet-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jenkinsfile">Jenkinsfile&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! groovy-mode)
+(package! jenkinsfile-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! jenkinsfile-mode
+:commands jenkinsfile-mode)
+(use-package! groovy-mode
+:commands groovy-mode)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="smart-parens">Smart Parens&lt;/h2>
+&lt;p>First thing is stop duplicates for quotes in vim, lisp, and org modes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! smartparens (sp-local-pair &lt;span style="color:#f92672">&amp;#39;&lt;/span>(lisp-mode org-mode) &lt;span style="color:#e6db74">&amp;#34;`&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;`&amp;#34;&lt;/span> :actions &lt;span style="color:#66d9ef">nil&lt;/span>))
+(after! smartparens (sp-local-pair &lt;span style="color:#f92672">&amp;#39;&lt;/span>(lisp-mode org-mode) &lt;span style="color:#e6db74">&amp;#34;&amp;#39;&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#39;&amp;#34;&lt;/span> :actions &lt;span style="color:#66d9ef">nil&lt;/span>))
+(after! smartparens (sp-local-pair &lt;span style="color:#f92672">&amp;#39;&lt;/span>(vimrc-mode) &lt;span style="color:#e6db74">&amp;#34;\&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\&amp;#34;&amp;#34;&lt;/span> :actions &lt;span style="color:#66d9ef">nil&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="bracket-newline">Bracket newline&lt;/h2>
+&lt;p>Lets you put a newline and move the point when between brackets and such. Very helpful with things like HCL/Terraform.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun +ved/new-line-dwim ()
+(interactive)
+(let ((break-open-pair (or (and (looking-back &lt;span style="color:#e6db74">&amp;#34;{&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;}&amp;#34;&lt;/span>))
+(and (looking-back &lt;span style="color:#e6db74">&amp;#34;&amp;gt;&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;lt;&amp;#34;&lt;/span>))
+(and (looking-back &lt;span style="color:#e6db74">&amp;#34;(&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;)&amp;#34;&lt;/span>))
+(and (looking-back &lt;span style="color:#e6db74">&amp;#34;\\[&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">looking-at&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\]&amp;#34;&lt;/span>)))))
+(newline)
+(when break-open-pair
+(save-excursion
+(newline)
+(indent-for-tab-command)))
+(indent-for-tab-command)))
+(map!
+:i &lt;span style="color:#e6db74">&amp;#34;M-RET&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/new-line-dwim)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="company">Company&lt;/h2>
+&lt;p>Customizations for company&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! company-ispell :disable &lt;span style="color:#66d9ef">t&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! company
+(set-company-backend! &lt;span style="color:#e6db74">&amp;#39;text-mode&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(:separate company-dabbrev company-yasnippet)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="company-box">Company Box&lt;/h3>
+&lt;p>Make the box appear less quickly&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! company-box
+(setq! company-box-doc-delay &lt;span style="color:#ae81ff">2&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="frame-dimensions">Frame dimensions&lt;/h2>
+&lt;p>See autoload.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook &lt;span style="color:#e6db74">&amp;#39;kill-emacs-hook&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>my-save-frame-dimensions-h)
+(my-restore-frame-dimensions-h)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;;; autoload.el -*- lexical-binding: t; -*-&lt;/span>
+&lt;span style="color:#75715e">;;;###autoload&lt;/span>
+(defmacro unpackaged/def-org-maybe-surround (&lt;span style="color:#66d9ef">&amp;amp;rest&lt;/span> keys)
+&lt;span style="color:#e6db74">&amp;#34;Define and bind interactive commands for each of KEYS that surround the region or insert text.
+&lt;/span>&lt;span style="color:#e6db74">Commands are bound in &lt;/span>&lt;span style="color:#e6db74">`org-mode-map&amp;#39;&lt;/span>&lt;span style="color:#e6db74"> to each of KEYS. If the
+&lt;/span>&lt;span style="color:#e6db74">region is active, commands surround it with the key character,
+&lt;/span>&lt;span style="color:#e6db74">otherwise call &lt;/span>&lt;span style="color:#e6db74">`org-self-insert-command&amp;#39;&lt;/span>&lt;span style="color:#e6db74">.&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">`&lt;/span>(progn
+&lt;span style="color:#f92672">,@&lt;/span>(cl-loop for key in keys
+for name &lt;span style="color:#a6e22e">=&lt;/span> (&lt;span style="color:#a6e22e">intern&lt;/span> (&lt;span style="color:#a6e22e">concat&lt;/span> &lt;span style="color:#e6db74">&amp;#34;unpackaged/org-maybe-surround-&amp;#34;&lt;/span> key))
+for docstring &lt;span style="color:#a6e22e">=&lt;/span> (&lt;span style="color:#a6e22e">format&lt;/span> &lt;span style="color:#e6db74">&amp;#34;If region is active, surround it with \&amp;#34;%s\&amp;#34;, otherwise call &lt;/span>&lt;span style="color:#e6db74">`org-self-insert-command&amp;#39;&lt;/span>&lt;span style="color:#e6db74">.&amp;#34;&lt;/span> key)
+collect &lt;span style="color:#f92672">`&lt;/span>(defun &lt;span style="color:#f92672">,&lt;/span>name ()
+&lt;span style="color:#f92672">,&lt;/span>docstring
+(interactive)
+(if (region-active-p)
+(let ((beg (&lt;span style="color:#a6e22e">region-beginning&lt;/span>))
+(end (&lt;span style="color:#a6e22e">region-end&lt;/span>)))
+(save-excursion
+(&lt;span style="color:#a6e22e">goto-char&lt;/span> end)
+(&lt;span style="color:#a6e22e">insert&lt;/span> &lt;span style="color:#f92672">,&lt;/span>key)
+(&lt;span style="color:#a6e22e">goto-char&lt;/span> beg)
+(&lt;span style="color:#a6e22e">insert&lt;/span> &lt;span style="color:#f92672">,&lt;/span>key)))
+(&lt;span style="color:#a6e22e">call-interactively&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>org-self-insert-command)))
+collect &lt;span style="color:#f92672">`&lt;/span>(&lt;span style="color:#a6e22e">define-key&lt;/span> org-mode-map (kbd &lt;span style="color:#f92672">,&lt;/span>key) &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>name))))
+&lt;span style="color:#75715e">;;;###autoload&lt;/span>
+(defun ap/org-mark-read-only ()
+&lt;span style="color:#e6db74">&amp;#34;Mark all entries in the buffer tagged \&amp;#34;read_only\&amp;#34; with read-only text properties.&amp;#34;&lt;/span>
+(interactive)
+(org-with-wide-buffer
+(&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))
+(while (unpackaged/org-next-heading-tagged &lt;span style="color:#e6db74">&amp;#34;read_only&amp;#34;&lt;/span>)
+(&lt;span style="color:#a6e22e">add-text-properties&lt;/span> (&lt;span style="color:#a6e22e">point&lt;/span>) (progn
+(org-end-of-subtree)
+(&lt;span style="color:#a6e22e">point&lt;/span>))
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(read_only &lt;span style="color:#66d9ef">t&lt;/span>)))))
+&lt;span style="color:#75715e">;;;###autoload&lt;/span>
+(defun my-save-frame-dimensions-h ()
+&lt;span style="color:#e6db74">&amp;#34;Caches the current frame dimensions and position so we can
+&lt;/span>&lt;span style="color:#e6db74"> restore it when we launch emacs again.&amp;#34;&lt;/span>
+(if-let ((main-frame (&lt;span style="color:#a6e22e">car-safe&lt;/span> (&lt;span style="color:#a6e22e">visible-frame-list&lt;/span>))))
+(doom-store-put &lt;span style="color:#e6db74">&amp;#39;last-frame-size&lt;/span>
+(&lt;span style="color:#a6e22e">list&lt;/span> (frame-position main-frame)
+(frame-width main-frame)
+(frame-height main-frame)
+(&lt;span style="color:#a6e22e">frame-parameter&lt;/span> main-frame &lt;span style="color:#e6db74">&amp;#39;fullscreen&lt;/span>)))))
+&lt;span style="color:#75715e">;;;###autoload&lt;/span>
+(defun my-restore-frame-dimensions-h ()
+(if-let (dims (doom-store-get &lt;span style="color:#e6db74">&amp;#39;last-frame-size&lt;/span> &lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span>))
+(cl-destructuring-bind ((left &lt;span style="color:#f92672">.&lt;/span> top) width height fullscreen) dims
+(setq initial-frame-alist
+(&lt;span style="color:#a6e22e">append&lt;/span> initial-frame-alist
+&lt;span style="color:#f92672">`&lt;/span>((left &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>left)
+(top &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>top)
+(width &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>width)
+(height &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>height)
+(fullscreen &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#f92672">,&lt;/span>fullscreen)))))
+(add-to-list &lt;span style="color:#e6db74">&amp;#39;default-frame-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(height &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#ae81ff">52&lt;/span>))
+(add-to-list &lt;span style="color:#e6db74">&amp;#39;default-frame-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(width &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#ae81ff">105&lt;/span>))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="my-lisp">My Lisp&lt;/h2>
+&lt;h3 id="timestamping">Timestamping&lt;/h3>
+&lt;p>Creates a timestamp line and modifies it as appropriate.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-load-path! &lt;span style="color:#e6db74">&amp;#34;mylisps/&amp;#34;&lt;/span>)
+(require &lt;span style="color:#e6db74">&amp;#39;ved-timestamping&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="projectile">Projectile&lt;/h2>
+&lt;p>Should be disabled, but just in case make it not update.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! projectile
+(setq projectile-auto-update-cache &lt;span style="color:#66d9ef">nil&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dash">Dash&lt;/h2>
+&lt;p>This is a document lookup tool for MacOS.&lt;/p>
+&lt;h3 id="install-package-if-macos">Install package if MacOS&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(when IS-MAC
+(package! dash-at-point))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-if-mac">Configure if mac&lt;/h3>
+&lt;ul>
+&lt;li>TODO Figure out what hyper is on linux&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(when IS-MAC
+(use-package! dash-at-point
+:commands (dash-at-point dash-at-point-with-docset))
+(add-to-list &lt;span style="color:#e6db74">&amp;#39;dash-at-point-mode-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(elisp-mode &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;elisp&amp;#34;&lt;/span>))
+(add-to-list &lt;span style="color:#e6db74">&amp;#39;dash-at-point-mode-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(nix-mode &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;nix&amp;#34;&lt;/span>))
+(add-to-list &lt;span style="color:#e6db74">&amp;#39;dash-at-point-mode-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(python-mode &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;py3&amp;#34;&lt;/span>))
+(map!
+:gni &lt;span style="color:#e6db74">&amp;#34;H-d&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;dash-at-point&lt;/span>
+:gni &lt;span style="color:#e6db74">&amp;#34;H-p&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;dash-at-point-with-docset&lt;/span>)
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="unicode-font-stuff">Unicode Font Stuff&lt;/h2>
+&lt;p>Not sure if this is helping, still have missing ligatures.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(unicode-fonts-setup)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rainbow-delimeters-config">Rainbow Delimeters Config&lt;/h2>
+&lt;p>Lua doesn&amp;rsquo;t have it for some reason, so we set it up.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook! &lt;span style="color:#e6db74">&amp;#39;lua-mode-hook&lt;/span> (rainbow-delimiters-mode))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="editorconfig">Editorconfig&lt;/h2>
+&lt;h3 id="custom-major-modes">Custom major modes&lt;/h3>
 &lt;p>Mostly for work but sometimes things need it (like &lt;code>.tmpl&lt;/code> for &lt;code>chezmoi&lt;/code>)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(package! editorconfig-custom-majormode)
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(after! editorconfig
