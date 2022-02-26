@@ -783,11 +783,12 @@ beacon-blink-when-focused &lt;span style="color:#66d9ef">t&lt;/span>)
 &lt;p>First need to set the org directory&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-directory &lt;span style="color:#e6db74">&amp;#34;~/org/&amp;#34;&lt;/span>)
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="allow-encryption-in-org-files">Allow encryption in org files&lt;/h4>
+&lt;p>This version has my email redacted&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp"> (use-package! org-crypt
 :after org
 :config
 (setq! org-tags-exclude-from-inheritance &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;crypt&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;read_only&amp;#34;&lt;/span>)
-org-crypt-key &lt;span style="color:#e6db74">&amp;#34;ved@evilolive.dev&amp;#34;&lt;/span>
+org-crypt-key &lt;span style="color:#e6db74">&amp;#34;redacted&amp;#34;&lt;/span>
 org-crypt-disable-auto-save &lt;span style="color:#e6db74">&amp;#34;ask&amp;#34;&lt;/span>)
 :init
 (org-crypt-use-before-save-magic)

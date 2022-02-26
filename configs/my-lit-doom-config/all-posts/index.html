@@ -266,15 +266,17 @@ vedevilolivedev Blog
 <p>First need to set the org directory</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(setq org-directory <span style=color:#e6db74>&#34;~/org/&#34;</span>)
 </code></pre></div><h4 id=allow-encryption-in-org-files>Allow encryption in org files<a href=#allow-encryption-in-org-files class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>This version has my email redacted</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>  (use-package! org-crypt
     :after org
     :config
     (setq! org-tags-exclude-from-inheritance <span style=color:#f92672>&#39;</span>(<span style=color:#e6db74>&#34;crypt&#34;</span> <span style=color:#e6db74>&#34;read_only&#34;</span>)
-           org-crypt-key <span style=color:#e6db74>&#34;ved@evilolive.dev&#34;</span>
+           org-crypt-key <span style=color:#e6db74>&#34;redacted&#34;</span>
            org-crypt-disable-auto-save <span style=color:#e6db74>&#34;ask&#34;</span>)
     :init
     (org-crypt-use-before-save-magic)
     )
+
 </code></pre></div><h4 id=read-only-sections>Read-only sections<a href=#read-only-sections class=hanchor arialabel=Anchor>&#8983;</a> </h4>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(defun unpackaged/org-next-heading-tagged (tag)
   <span style=color:#e6db74>&#34;Move to beginning of next heading tagged with TAG and return point, or return nil if none found.&#34;</span>
