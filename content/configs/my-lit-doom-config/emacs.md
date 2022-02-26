@@ -2,7 +2,6 @@
 title = "Doom Config"
 author = ["Ved Evilolive"]
 description = "Just my lit config"
-date = 2022-02-11T23:50:00-07:00
 draft = false
 toc = true
 +++
@@ -316,16 +315,19 @@ First need to set the org directory
 
 ### Allow encryption in org files {#allow-encryption-in-org-files}
 
+This version has my email redacted
+
 ```emacs-lisp
   (use-package! org-crypt
     :after org
     :config
     (setq! org-tags-exclude-from-inheritance '("crypt" "read_only")
-           org-crypt-key "ved@evilolive.dev"
+           org-crypt-key "redacted"
            org-crypt-disable-auto-save "ask")
     :init
     (org-crypt-use-before-save-magic)
     )
+
 ```
 
 
@@ -959,5 +961,7 @@ Mostly for work but sometimes things need it (like `.tmpl` for `chezmoi`)
 
 ```emacs-lisp
 (after! editorconfig
-  (use-package! editorconfig-custom-majormode))
+  (use-package! editorconfig-custom-majormode
+    :config (add-hook! 'editorconfig-custom-hooks
+          'editorconfig-custom-majormode)))
 ```
