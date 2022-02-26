@@ -338,16 +338,19 @@ First need to set the org directory
 
 #### Allow encryption in org files {#allow-encryption-in-org-files}
 
+This version has my email redacted
+
 ```emacs-lisp
   (use-package! org-crypt
     :after org
     :config
     (setq! org-tags-exclude-from-inheritance '("crypt" "read_only")
-           org-crypt-key "ved@evilolive.dev"
+           org-crypt-key "redacted"
            org-crypt-disable-auto-save "ask")
     :init
     (org-crypt-use-before-save-magic)
     )
+
 ```
 
 
