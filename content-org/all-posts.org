@@ -2,7 +2,8 @@
 #+hugo_base_dir: ../
 #+HUGO_SECTION: posts
 
-* YES Doom Config
+* DONE Doom Config
+CLOSED: [2022-05-10 Tue 18:40]
 :PROPERTIES:
 :export_hugo_bundle: my-lit-doom-config
 :EXPORT_FILE_NAME: emacs
@@ -13,6 +14,18 @@
 Just my lit config
 #+end_description
 #+include: "~/chezmoi/dotfiles/doom_emacs/lit.org" :lines "8-"
+* DONE ZSH Config
+CLOSED: [2022-05-10 Tue 18:40]
+:PROPERTIES:
+:export_hugo_bundle: my-lit-zsh-config
+:EXPORT_FILE_NAME: zsh
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
+:EXPORT_HUGO_SECTION: configs
+:END:
+#+begin_description
+ZSH lit config for zinit
+#+end_description
+#+include: "~/chezmoi/dotfiles/private_zsh_lit/ZSH-lit.org"
 * DONE About
 CLOSED: [2022-01-23 Sun 15:10]
 :PROPERTIES:

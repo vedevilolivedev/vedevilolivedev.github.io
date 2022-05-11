@@ -2,6 +2,7 @@
 title = "Doom Config"
 author = ["Ved Evilolive"]
 description = "Just my lit config"
+date = 2022-05-10T18:40:00-06:00
 draft = false
 toc = true
 +++
@@ -50,15 +51,6 @@ Hostnames hidden here. But they look like
 
 
 ## UI {#ui}
-
-
-### Scrolling {#scrolling}
-
-Perhaps reduce flickering/help with speed on retina. See <https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83/3>
-
-```emacs-lisp
-;; (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
-```
 
 
 ### Dashboard {#dashboard}
@@ -115,7 +107,7 @@ These functions are also a convenience one so don't have to repeat them.
          :action find-file)
         ("Recently Opened Files"
          :icon (all-the-icons-octicon "history" :face 'doom-dashboard-menu-title)
-         :action recentf-open-files)
+         :action consult-recent-file)
         ("Open EMACS Config Dir"
          :icon (all-the-icons-faicon "folder-open-o" :face 'doom-dashboard-menu-title)
          :action doom/open-private-config)
@@ -247,6 +239,13 @@ Defaults for electric were too dark, so changing it here.
     (custom-set-faces!
      '(line-number :foreground "#6C7B8B")
      '(line-number-current-line :foreground "#FFFFFF" :weight bold)))
+```
+
+
+#### Jenkinsfile enable line numbers {#jenkinsfile-enable-line-numbers}
+
+```emacs-lisp
+(add-hook! 'jenkinsfile-mode-hook (display-line-numbers-mode 1))
 ```
 
 
@@ -439,6 +438,8 @@ This makes org things show when the point is near/in it.
   :config
   (setq! org-appear-autoemphasis t
          org-appear-autosubmarkers t
+         org-appear-autoentities t
+         org-appear-autolinks t
          )
   )
 ```
@@ -893,7 +894,9 @@ Should be disabled, but just in case make it not update.
 
 ```emacs-lisp
 (after! projectile
-  (setq projectile-auto-update-cache nil))
+  (setq projectile-auto-update-cache nil)
+(setq projectile-project-root-files-bottom-up (remove
+            ".git" projectile-project-root-files-bottom-up)))
 ```
 
 
@@ -964,4 +967,21 @@ Mostly for work but sometimes things need it (like `.tmpl` for `chezmoi`)
   (use-package! editorconfig-custom-majormode
     :config (add-hook! 'editorconfig-custom-hooks
           'editorconfig-custom-majormode)))
+```
+
+
+## Programming Foo {#programming-foo}
+
+
+### Lua {#lua}
+
+
+#### lua-lsp LSP {#lua-lsp-lsp}
+
+I have a script that installs it for NVIM so this is just pointing it toward seeing it. I dunno why the path it has is so jacked up but it is.
+
+```emacs-lisp
+(after! lsp-mode
+(setq! lsp-clients-lua-lsp-server-install-dir "/Users/kailash/.asdf/shims/lua-lsp")
+)
 ```
