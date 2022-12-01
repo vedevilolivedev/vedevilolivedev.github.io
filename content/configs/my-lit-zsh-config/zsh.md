@@ -2,7 +2,7 @@
 title = "ZSH Config"
 author = ["Ved Evilolive"]
 description = "ZSH lit config for zinit"
-date = 2022-05-10T18:40:00-06:00
+date = 2022-11-30T23:54:00-07:00
 draft = false
 toc = true
 +++
@@ -208,6 +208,7 @@ alias cmd="{{ .chezmoi.executable }} diff"
 alias gerpom="git push origin HEAD:refs/for/master"
 alias updategerrit="git commit --amend --no-edit && gerpom"
 alias cbblr="/usr/bin/ssh cobbler"
+alias arsenal="arsenal --conf ~/.arsenal/arsenal.ini"
 {{- end }}
 ```
 
@@ -590,16 +591,6 @@ zinit ice as'completion'; zinit snippet OMZP::pip/_pip
 ```
 
 
-## Atuin {#atuin}
-
-Install by running `bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)` and then `atuin import auto`. Make sure to link the config first.
-
-```shell
-# zinit ice wait'3' depth'1' lucid
-# zinit light ellie/atuin
-```
-
-
 ## Function to Tangle from CLI {#function-to-tangle-from-cli}
 
 ```shell
@@ -699,12 +690,12 @@ zstyle ':omz:plugins:ssh-agent' identities ${mykeyids}
 ## zoxide {#zoxide}
 
 ```shell
-zinit ice wait"0a" as"command" from"gh-r" lucid \
-  atclone"./zoxide init zsh > init.zsh" \
-  atpull"%atclone" src"init.zsh" sbin'zoxide!' nocompile'!'
-zinit light ajeetdsouza/zoxide
-# zinit ice wait'3c' lucid
-# zinit snippet OMZP::zoxide
+#zinit ice wait"0a" as"command" from"gh-r" lucid \
+#  atclone"./zoxide init zsh > init.zsh" \
+#  atpull"%atclone" src"init.zsh" sbin'zoxide!' nocompile'!'
+#zinit light ajeetdsouza/zoxide
+zinit ice wait'3c' lucid
+zinit snippet OMZP::zoxide
 ```
 
 
@@ -744,7 +735,7 @@ zinit snippet OMZP::tmux
 ## Ubuntu {#ubuntu}
 
 ```shell
-{{- if hasKey .chezmoi.osRelease "id" -}}
+{{- if eq .chezmoi.os "linux" -}}
 {{- if eq .chezmoi.osRelease.id "ubuntu" }}
 zinit ice wait'0c' lucid
 zinit snippet OMZP::ubuntu

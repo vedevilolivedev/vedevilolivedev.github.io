@@ -409,6 +409,7 @@ Fix some that don't show up on Mac for some fucking reason.
             :false "⊭"
             :str ""
             :bool "ℬ"
+            :int ""
 )
 ```
 
@@ -634,7 +635,7 @@ I hate some of the remaps, so this puts it to how I like it/used to it from gene
     :gn "H-r" #'+ved/ffchez
     :gn "H-z" #'+ved/loadzshlit
     :gn "H-m" (cmd! (find-file (expand-file-name "~/chezmoi/dotfiles/.chezmoi.toml.tmpl")))
-    :gn "H-n" (cmd! (doom-project-find-file "~/chezmoi/dotfiles/dot_config/nvim/"))
+    :gn "H-v" (cmd! (doom-project-find-file "~/chezmoi/dotfiles/targets/nvim/"))
 )
 ```
 
@@ -883,7 +884,7 @@ otherwise call `org-self-insert-command'."
 Creates a timestamp line and modifies it as appropriate.
 
 ```emacs-lisp
-(add-load-path! "mylisps/")
+(add-load-path! "~/.doom.d/mylisps/")
 (require 'ved-timestamping)
 ```
 
@@ -894,9 +895,18 @@ Should be disabled, but just in case make it not update.
 
 ```emacs-lisp
 (after! projectile
-  (setq projectile-auto-update-cache nil)
-(setq projectile-project-root-files-bottom-up (remove
-            ".git" projectile-project-root-files-bottom-up)))
+  (setq projectile-auto-update-cache nil))
+```
+
+It's trying to make the home directory root so remove .git from bottom-up
+
+```emacs-lisp
+(after! projectile
+  (setq projectile-project-root-files-bottom-up
+        (remove
+         ".git" projectile-project-root-files-bottom-up)
+        )
+  )
 ```
 
 
@@ -909,7 +919,7 @@ This is a document lookup tool for MacOS.
 
 ```emacs-lisp
 (when IS-MAC
-(package! dash-at-point))
+  (package! dash-at-point))
 ```
 
 
@@ -984,4 +994,18 @@ I have a script that installs it for NVIM so this is just pointing it toward see
 (after! lsp-mode
 (setq! lsp-clients-lua-lsp-server-install-dir "/Users/kailash/.asdf/shims/lua-lsp")
 )
+```
+
+
+## Xonsh {#xonsh}
+
+Xonsh mode support
+
+```emacs-lisp
+(package! xonsh-mode)
+```
+
+```emacs-lisp
+(use-package! xonsh-mode
+  :commands xonsh-mode)
 ```
