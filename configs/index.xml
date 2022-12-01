@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configs on vedevilolivedev Blog</title><link>https://blog.evilolive.dev/configs/</link><description>Recent content in Configs on vedevilolivedev Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 18:40:00 -0600</lastBuildDate><atom:link href="https://blog.evilolive.dev/configs/index.xml" rel="self" type="application/rss+xml"/><item><title>Doom Config</title><link>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</link><pubDate>Tue, 10 May 2022 18:40:00 -0600</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</guid><description>Headers ;;; config.el -*- lexical-binding: t; -*- ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*- User info The real version has the proper info obviously.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configs on vedevilolivedev Blog</title><link>https://blog.evilolive.dev/configs/</link><description>Recent content in Configs on vedevilolivedev Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Dec 2022 00:16:00 -0700</lastBuildDate><atom:link href="https://blog.evilolive.dev/configs/index.xml" rel="self" type="application/rss+xml"/><item><title>Doom Config</title><link>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</link><pubDate>Thu, 01 Dec 2022 00:16:00 -0700</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-doom-config/emacs/</guid><description>Headers ;;; config.el -*- lexical-binding: t; -*- ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*- User info The real version has the proper info obviously.
 (setq user-full-name &amp;#34;redacted&amp;#34; user-mail-address &amp;#34;redacted&amp;#34;) GPG/Security setup Set the settings for authorization/passwords. Don&amp;rsquo;t really use this but set anyway.
 (setq auth-sources &amp;#39;(&amp;#34;~/.authinfo.gpg&amp;#34;)) System-specific Hostnames hidden here. But they look like
-(defconst HOSTNAME (string-equal (system-name) &amp;#34;hostname&amp;#34;)) UI Dashboard Fancy splash image (setq fancy-splash-image (concat doom-private-dir &amp;#34;/splash/doomslant.</description><content>&lt;h2 id="headers">Headers&lt;/h2>
+(defconst HOSTNAME (string-equal (system-name) &amp;#34;hostname&amp;#34;)) UI Dashboard Fancy splash image (setq fancy-splash-image (concat doom-user-dir &amp;#34;/splash/doomslant.png&amp;#34;)) Utility Functions These functions are also a convenience one so don&amp;rsquo;t have to repeat them.</description><content>&lt;h2 id="headers">Headers&lt;/h2>
 &lt;!-- raw HTML omitted -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">;;; config.el -*- lexical-binding: t; -*-&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
@@ -19,26 +19,36 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ui">UI&lt;/h2>
 &lt;h3 id="dashboard">Dashboard&lt;/h3>
 &lt;h4 id="fancy-splash-image">Fancy splash image&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(setq fancy-splash-image (&lt;span style="color:#a6e22e">concat&lt;/span> doom-private-dir &lt;span style="color:#e6db74">&amp;#34;/splash/doomslant.png&amp;#34;&lt;/span>))
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(setq fancy-splash-image (&lt;span style="color:#a6e22e">concat&lt;/span> doom-user-dir &lt;span style="color:#e6db74">&amp;#34;/splash/doomslant.png&amp;#34;&lt;/span>))
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="utility-functions">Utility Functions&lt;/h4>
 &lt;p>These functions are also a convenience one so don&amp;rsquo;t have to repeat them.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(defun +ved/loadlit ()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Load the lit.org from ~/.doom.d or whatever the private dir is.&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lit.org&amp;#34;&lt;/span> doom-private-dir)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lit.org&amp;#34;&lt;/span> doom-user-dir)))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(defun +ved/ffchez ()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Explore the chezmoi dotfiles directory since this is frequented.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (doom-project-find-file &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/&amp;#34;&lt;/span>))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(defun +ved/loadzshlit ()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Open the ZSH literate config file.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/ZSH-lit.org&amp;#34;&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(defun +ved/loaddoominit ()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Open the doom emacs init.el file.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;init.el&amp;#34;&lt;/span> doom-user-dir)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(defun +ved/loadhugo ()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Open hugo file.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/ghblog/content-org/all-posts.org&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="change-the-mapping">Change the mapping&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(map! :map +doom-dashboard-mode-map
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :ne &lt;span style="color:#e6db74">&amp;#34;f&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>find-file
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :ne &lt;span style="color:#e6db74">&amp;#34;r&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>consult-recent-file
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :ne &lt;span style="color:#e6db74">&amp;#34;p&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>doom/open-private-config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :ne &lt;span style="color:#e6db74">&amp;#34;i&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loaddoominit
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :ne &lt;span style="color:#e6db74">&amp;#34;l&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadlit
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :ne &lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/ffchez
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :ne &lt;span style="color:#e6db74">&amp;#34;z&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadzshlit
@@ -55,6 +65,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#e6db74">&amp;#34;Open EMACS Config Dir&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :icon (all-the-icons-faicon &lt;span style="color:#e6db74">&amp;#34;folder-open-o&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :action doom/open-private-config)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#e6db74">&amp;#34;Open EMACS init.el&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :icon (all-the-icons-fileicon &lt;span style="color:#e6db74">&amp;#34;emacs&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :action +ved/loaddoominit)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#e6db74">&amp;#34;Open EMACS Literate ORG File&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :icon (all-the-icons-fileicon &lt;span style="color:#e6db74">&amp;#34;emacs&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :action +ved/loadlit)
@@ -63,7 +76,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :action +ved/loadzshlit)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#e6db74">&amp;#34;Open Chezmoi Dotfiles Dir&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :icon (all-the-icons-octicon &lt;span style="color:#e6db74">&amp;#34;home&amp;#34;&lt;/span> :face &lt;span style="color:#e6db74">&amp;#39;doom-dashboard-menu-title&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :action +ved/ffchez)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :action +ved/ffchez))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="better-buffer-name">Better Buffer Name&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(setq +doom-dashboard-name &lt;span style="color:#e6db74">&amp;#34; Doom&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="font">Font&lt;/h3>
@@ -166,7 +180,8 @@
 &lt;p>First need to set the org directory&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(setq org-directory &lt;span style="color:#e6db74">&amp;#34;~/org/&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="allow-encryption-in-org-files">Allow encryption in org files&lt;/h3>
-&lt;p>This version has my email redacted&lt;/p>
+&lt;p>I don&amp;rsquo;t really use this much but hell, why not? Also including the read_only tag in the exclude cause they&amp;rsquo;ll be commonly used together.
+This version has my email redacted&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span> (use-package! org-crypt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :after org
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :config
@@ -177,8 +192,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (org-crypt-use-before-save-magic)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="read-only-sections">Read-only sections&lt;/h3>
+&lt;p>Mostly for also protecting the encrypted sections.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(defun unpackaged/org-next-heading-tagged (tag)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Move to beginning of next heading tagged with TAG and return point, or return nil if none found.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Move to next heading tagged with TAG and return point, or return nil if none found.&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (when (&lt;span style="color:#a6e22e">re-search-forward&lt;/span> (rx-to-string &lt;span style="color:#f92672">`&lt;/span>(seq bol (&lt;span style="color:#a6e22e">1+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>) (&lt;span style="color:#a6e22e">1+&lt;/span> blank) (optional (&lt;span style="color:#a6e22e">1+&lt;/span> not-newline) (&lt;span style="color:#a6e22e">1+&lt;/span> blank))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">;; Beginning of tags&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>
@@ -190,7 +206,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">match-beginning&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>))))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(defun ap/org-remove-read-only ()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Remove read-only text properties from Org entries tagged \&amp;#34;read_only\&amp;#34; in current buffer.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Remove read-only text properties from Org entries tagged read_only in current buffer.&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (let ((inhibit-read-only &lt;span style="color:#66d9ef">t&lt;/span>))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (org-with-wide-buffer
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))
@@ -239,6 +255,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :false &lt;span style="color:#e6db74">&amp;#34;⊭&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :str &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :bool &lt;span style="color:#e6db74">&amp;#34;ℬ&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :int &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="templates">Templates&lt;/h3>
 &lt;p>I&amp;rsquo;ve got my own templates I like to use.&lt;/p>
@@ -264,7 +281,7 @@ I forget what invisible-edits does.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (setq
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> org-use-property-inheritance &lt;span style="color:#66d9ef">t&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> org-log-done &lt;span style="color:#e6db74">&amp;#39;time&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> org-catch-invisible-edits &lt;span style="color:#e6db74">&amp;#39;smart&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> org-fold-catch-invisible-edits &lt;span style="color:#e6db74">&amp;#39;smart&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">;; org-export-with-sub-superscripts &amp;#39;{}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> org-ellipsis &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> org-support-shift-select &lt;span style="color:#66d9ef">t&lt;/span>
@@ -285,7 +302,7 @@ I forget what invisible-edits does.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="disable-company-in-org">Disable Company in Org&lt;/h3>
 &lt;p>It&amp;rsquo;s annoying&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span> (after! company (defun ved/org-mode-hook()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (when (featurep! :completion company)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (when (modulep! :completion company)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Disabling company-mode while in org-capture...&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (company-mode &lt;span style="color:#ae81ff">-1&lt;/span>))))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (after! org (add-hook! org-capture-mode (ved/org-mode-hook)))
@@ -352,7 +369,7 @@ I forget what invisible-edits does.&lt;/p>
 &lt;ul>
 &lt;li>Mac specific keybinds (set &lt;code>fn&lt;/code> key to &lt;code>hyper&lt;/code>)&lt;/li>
 &lt;li>Also makes &lt;code>Super Left-Click&lt;/code> to &lt;code>Middle Click&lt;/code>&lt;/li>
-&lt;li>&lt;code>Super&lt;/code> is &lt;code>Command&lt;/code> on Mac.&lt;/li>
+&lt;li>&lt;code>Super&lt;/code> is &lt;code>Command&lt;/code> On Mac.&lt;/li>
 &lt;/ul>
 &lt;!-- raw HTML omitted -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(when IS-MAC
@@ -379,8 +396,10 @@ I forget what invisible-edits does.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-l&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadlit
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-r&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/ffchez
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-z&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadzshlit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-i&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loaddoominit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-b&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>+ved/loadhugo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-m&amp;#34;&lt;/span> (cmd! (find-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/.chezmoi.toml.tmpl&amp;#34;&lt;/span>)))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-n&amp;#34;&lt;/span> (cmd! (doom-project-find-file &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/dot_config/nvim/&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :gn &lt;span style="color:#e6db74">&amp;#34;H-v&amp;#34;&lt;/span> (cmd! (doom-project-find-file &lt;span style="color:#e6db74">&amp;#34;~/chezmoi/dotfiles/targets/nvim/&amp;#34;&lt;/span>))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="whichkey">Whichkey&lt;/h3>
 &lt;h4 id="general-settings">General Settings&lt;/h4>
@@ -403,7 +422,8 @@ I forget what invisible-edits does.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;\\`g s&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\`evilem--?motion-\\(.*\\)&amp;#34;&lt;/span>) &lt;span style="color:#f92672">.&lt;/span> (&lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;◃\\1&amp;#34;&lt;/span>))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>))
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="file-modes">File Modes&lt;/h2>
-&lt;h3 id="vim">VIM&lt;/h3>
+&lt;h3 id="vim">&lt;!-- raw HTML omitted -->KILL&lt;!-- raw HTML omitted --> VIM&lt;/h3>
+&lt;p>Moved to neovim, this probably isn&amp;rsquo;t necessary.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(package! vimrc-mode)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(use-package! vimrc-mode
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :defer &lt;span style="color:#66d9ef">t&lt;/span>
@@ -431,10 +451,12 @@ I forget what invisible-edits does.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="jenkinsfile">Jenkinsfile&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(package! groovy-mode)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(package! jenkinsfile-mode)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(use-package! jenkinsfile-mode
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(when DENM
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(use-package! jenkinsfile-mode
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>:commands jenkinsfile-mode)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(use-package! groovy-mode
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>:commands groovy-mode)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="smart-parens">Smart Parens&lt;/h2>
 &lt;p>First thing is stop duplicates for quotes in vim, lisp, and org modes.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(after! smartparens (sp-local-pair &lt;span style="color:#f92672">&amp;#39;&lt;/span>(lisp-mode org-mode) &lt;span style="color:#e6db74">&amp;#34;`&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;`&amp;#34;&lt;/span> :actions &lt;span style="color:#66d9ef">nil&lt;/span>))
@@ -495,7 +517,7 @@ I forget what invisible-edits does.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> collect &lt;span style="color:#f92672">`&lt;/span>(&lt;span style="color:#a6e22e">define-key&lt;/span> org-mode-map (kbd &lt;span style="color:#f92672">,&lt;/span>key) &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>name))))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">;;;###autoload&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(defun ap/org-mark-read-only ()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Mark all entries in the buffer tagged \&amp;#34;read_only\&amp;#34; with read-only text properties.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Mark all entries in the buffer tagged read_only with read-only text properties.&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (org-with-wide-buffer
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">goto-char&lt;/span> (&lt;span style="color:#a6e22e">point-min&lt;/span>))
@@ -530,19 +552,24 @@ I forget what invisible-edits does.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="my-lisp">My Lisp&lt;/h2>
 &lt;h3 id="timestamping">Timestamping&lt;/h3>
 &lt;p>Creates a timestamp line and modifies it as appropriate.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(add-load-path! &lt;span style="color:#e6db74">&amp;#34;mylisps/&amp;#34;&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(add-load-path! &lt;span style="color:#e6db74">&amp;#34;~/.doom.d/mylisps/&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(require &lt;span style="color:#e6db74">&amp;#39;ved-timestamping&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="projectile">Projectile&lt;/h2>
 &lt;p>Should be disabled, but just in case make it not update.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(after! projectile
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (setq projectile-auto-update-cache &lt;span style="color:#66d9ef">nil&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(setq projectile-project-root-files-bottom-up (remove
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;.git&amp;#34;&lt;/span> projectile-project-root-files-bottom-up)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (setq projectile-auto-update-cache &lt;span style="color:#66d9ef">nil&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s trying to make the home directory root so remove .git from bottom-up&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(after! projectile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (setq projectile-project-root-files-bottom-up
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (remove
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;.git&amp;#34;&lt;/span> projectile-project-root-files-bottom-up)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dash">Dash&lt;/h2>
 &lt;p>This is a document lookup tool for MacOS.&lt;/p>
 &lt;h3 id="install-package-if-macos">Install package if MacOS&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(when IS-MAC
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(package! dash-at-point))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (package! dash-at-point))
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-if-mac">Configure if mac&lt;/h3>
 &lt;ul>
 &lt;li>TODO Figure out what hyper is on linux&lt;/li>
@@ -576,10 +603,16 @@ I forget what invisible-edits does.&lt;/p>
 &lt;h3 id="lua">Lua&lt;/h3>
 &lt;h4 id="lua-lsp-lsp">lua-lsp LSP&lt;/h4>
 &lt;p>I have a script that installs it for NVIM so this is just pointing it toward seeing it. I dunno why the path it has is so jacked up but it is.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(after! lsp-mode
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">; Might need to fix this to not be specific to certaincomputers.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(after! lsp-mode
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(setq! lsp-clients-lua-lsp-server-install-dir &lt;span style="color:#e6db74">&amp;#34;/Users/kailash/.asdf/shims/lua-lsp&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>ZSH Config</title><link>https://blog.evilolive.dev/configs/my-lit-zsh-config/zsh/</link><pubDate>Tue, 10 May 2022 18:40:00 -0600</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-zsh-config/zsh/</guid><description>Goals Move things like exa/fd/etc&amp;hellip; to asdf and base this around that? Profiling Sometimes I wanna test it outside of just zinit&amp;rsquo;s stuff
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="xonsh">Xonsh&lt;/h2>
+&lt;p>Xonsh mode support&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(package! xonsh-mode)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(use-package! xonsh-mode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> :commands xonsh-mode)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>ZSH Config</title><link>https://blog.evilolive.dev/configs/my-lit-zsh-config/zsh/</link><pubDate>Thu, 01 Dec 2022 00:16:00 -0700</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-zsh-config/zsh/</guid><description>Goals Move things like exa/fd/etc&amp;hellip; to asdf and base this around that? Profiling Sometimes I wanna test it outside of just zinit&amp;rsquo;s stuff
 # zmodload zsh/zprof P10K Instant Prompt Instant Prompt Currently disabled because of how I want to do my login thing. But zinit seems fast enough it&amp;rsquo;s fine. Enables Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc. Initialization code that may require console input (password prompts, [y/n] confirmations, etc.</description><content>&lt;h2 id="goals">Goals&lt;/h2>
 &lt;ul>
 &lt;li>&lt;input disabled="" type="checkbox"> Move things like exa/fd/etc&amp;hellip; to asdf and base this around that?&lt;/li>
@@ -686,6 +719,10 @@ confirmations, etc.) must go above this block; everything else may go below.&lt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias sed&lt;span style="color:#f92672">={{&lt;/span>- lookPath &lt;span style="color:#e6db74">&amp;#34;gsed&amp;#34;&lt;/span> | quote &lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias ssed&lt;span style="color:#f92672">={{&lt;/span>- lookPath &lt;span style="color:#e6db74">&amp;#34;sed&amp;#34;&lt;/span> | quote &lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- end &lt;span style="color:#f92672">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- &lt;span style="color:#66d9ef">if&lt;/span> lookPath &lt;span style="color:#e6db74">&amp;#34;gtar&amp;#34;&lt;/span> &lt;span style="color:#f92672">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias tar&lt;span style="color:#f92672">={{&lt;/span>- lookPath &lt;span style="color:#e6db74">&amp;#34;gtar&amp;#34;&lt;/span> | quote &lt;span style="color:#f92672">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias star&lt;span style="color:#f92672">={{&lt;/span>- lookPath &lt;span style="color:#e6db74">&amp;#34;tar&amp;#34;&lt;/span> | quote &lt;span style="color:#f92672">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- end &lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="chezmoi">Chezmoi&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>alias cm&lt;span style="color:#f92672">={{&lt;/span> .chezmoi.executable | quote&lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias cma&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;{{ .chezmoi.executable }} apply&amp;#34;&lt;/span>
@@ -698,6 +735,7 @@ confirmations, etc.) must go above this block; everything else may go below.&lt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias gerpom&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;git push origin HEAD:refs/for/master&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias updategerrit&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;git commit --amend --no-edit &amp;amp;&amp;amp; gerpom&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias cbblr&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/usr/bin/ssh cobbler&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias arsenal&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;arsenal --conf ~/.arsenal/arsenal.ini&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- end &lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pretty-things">Pretty things&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
@@ -737,18 +775,17 @@ confirmations, etc.) must go above this block; everything else may go below.&lt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="source-scripts">Source scripts&lt;/h2>
 &lt;h3 id="conda">Conda &lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->work&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>eq .chezmoi.hostname &lt;span style="color:#e6db74">&amp;#34;bburks-mbp&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">}}&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- &lt;span style="color:#66d9ef">if&lt;/span> .workmode &lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># &amp;gt;&amp;gt;&amp;gt; conda initialize &amp;gt;&amp;gt;&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># !! Contents within this block are managed by &amp;#39;conda init&amp;#39; !!&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>__conda_setup&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>CONDA_REPORT_ERRORS&lt;span style="color:#f92672">=&lt;/span>false &lt;span style="color:#e6db74">&amp;#39;/Users/bburks/opt/miniconda3/bin/conda&amp;#39;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;shell.zsh&amp;#39;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;hook&amp;#39;&lt;/span> 2&amp;gt; /dev/null&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>__conda_setup&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>CONDA_REPORT_ERRORS&lt;span style="color:#f92672">=&lt;/span>false &lt;span style="color:#e6db74">&amp;#39;${HOME}/opt/miniconda3/bin/conda&amp;#39;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;shell.zsh&amp;#39;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;hook&amp;#39;&lt;/span> 2&amp;gt; /dev/null&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> $? -eq &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eval &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$__conda_setup&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -f &lt;span style="color:#e6db74">&amp;#34;/Users/bburks/opt/miniconda3/etc/profile.d/conda.sh&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#e6db74">&amp;#34;/Users/bburks/opt/miniconda3/etc/profile.d/conda.sh&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -f &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>HOME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/opt/miniconda3/etc/profile.d/conda.sh&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>HOME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/opt/miniconda3/etc/profile.d/conda.sh&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#export PATH=&amp;#34;/Users/bburks/opt/miniconda3/bin:$PATH&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$PATH&lt;span style="color:#e6db74">:/Users/bburks/opt/minicoda3/bin&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$PATH&lt;span style="color:#e6db74">:&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>HOME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/opt/minicoda3/bin&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>unset __conda_setup
@@ -927,10 +964,6 @@ This is the original way. Not using it in favor of switching to proper cargo and
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>zinit ice wait&lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span> lucid
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit snippet OMZP::pip
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit ice as&lt;span style="color:#e6db74">&amp;#39;completion&amp;#39;&lt;/span>; zinit snippet OMZP::pip/_pip
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="atuin">Atuin&lt;/h2>
-&lt;p>Install by running &lt;code>bash &amp;lt;(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)&lt;/code> and then &lt;code>atuin import auto&lt;/code>. Make sure to link the config first.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># zinit ice wait&amp;#39;3&amp;#39; depth&amp;#39;1&amp;#39; lucid&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># zinit light ellie/atuin&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="function-to-tangle-from-cli">Function to Tangle from CLI&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> tangle-file&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> emacs --batch -l org $@ -f org-babel-tangle
@@ -966,30 +999,23 @@ This is now installed via git for all OS&amp;rsquo;s to keep the path work sane&
 &lt;p>Suggests things if you don&amp;rsquo;t have it installed. But does need a helper. On macOS it&amp;rsquo;s &lt;code>brew tap homebrew/command-not-found&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>zinit snippet OMZP::command-not-found
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ssh">SSH&lt;/h2>
-&lt;p>Sets up the agent, hopefully unfucking the macos stuff&lt;/p>
+&lt;p>Sets up the agent, hopefully unfucking the macos stuff.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>zinit ice wait&lt;span style="color:#e6db74">&amp;#39;0c&amp;#39;&lt;/span> lucid
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit snippet OMZP::ssh-agent
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#zinit snippet PZTM::ssh&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mykeyids&lt;span style="color:#f92672">=(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;id_ed25519&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#66d9ef">$(&lt;/span>hostname -s&lt;span style="color:#66d9ef">)&lt;/span> in
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;bburks-mbp&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> keyids&lt;span style="color:#f92672">+=(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;magnite-github&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;id_ecdsa_sk&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;caelus&amp;#34;&lt;/span>|&lt;span style="color:#e6db74">&amp;#34;coeus&amp;#34;&lt;/span>|&lt;span style="color:#e6db74">&amp;#34;frontiere&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">[[&lt;/span> -f &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>HOME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/.ssh/vault-signed.pub&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> keyids&lt;span style="color:#f92672">+=(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;vault-signed.pub&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">esac&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> akey in &lt;span style="color:#e6db74">${&lt;/span>mykeyids&lt;span style="color:#e6db74">}&lt;/span>; &lt;span style="color:#66d9ef">do&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Redacted the &lt;code>keyids&lt;/code> code but basically make an array or something.
+Now actually add them.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> akey in &lt;span style="color:#e6db74">${&lt;/span>mykeyids&lt;span style="color:#e6db74">}&lt;/span>; &lt;span style="color:#66d9ef">do&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mykeypaths&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>HOME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/.ssh/&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>akey&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zstyle &lt;span style="color:#e6db74">&amp;#39;:omz:plugins:ssh-agent&amp;#39;&lt;/span> identities &lt;span style="color:#e6db74">${&lt;/span>mykeyids&lt;span style="color:#e6db74">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="zoxide">zoxide&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>zinit ice wait&lt;span style="color:#e6db74">&amp;#34;0a&amp;#34;&lt;/span> as&lt;span style="color:#e6db74">&amp;#34;command&amp;#34;&lt;/span> from&lt;span style="color:#e6db74">&amp;#34;gh-r&amp;#34;&lt;/span> lucid &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> atclone&lt;span style="color:#e6db74">&amp;#34;./zoxide init zsh &amp;gt; init.zsh&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> atpull&lt;span style="color:#e6db74">&amp;#34;%atclone&amp;#34;&lt;/span> src&lt;span style="color:#e6db74">&amp;#34;init.zsh&amp;#34;&lt;/span> sbin&lt;span style="color:#e6db74">&amp;#39;zoxide!&amp;#39;&lt;/span> nocompile&lt;span style="color:#e6db74">&amp;#39;!&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit light ajeetdsouza/zoxide
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># zinit ice wait&amp;#39;3c&amp;#39; lucid&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># zinit snippet OMZP::zoxide&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#zinit ice wait&amp;#34;0a&amp;#34; as&amp;#34;command&amp;#34; from&amp;#34;gh-r&amp;#34; lucid \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># atclone&amp;#34;./zoxide init zsh &amp;gt; init.zsh&amp;#34; \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># atpull&amp;#34;%atclone&amp;#34; src&amp;#34;init.zsh&amp;#34; sbin&amp;#39;zoxide!&amp;#39; nocompile&amp;#39;!&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#zinit light ajeetdsouza/zoxide&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit ice wait&lt;span style="color:#e6db74">&amp;#39;3c&amp;#39;&lt;/span> lucid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit snippet OMZP::zoxide
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="chezmoi-completion">chezmoi completion&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>zinit ice as&lt;span style="color:#e6db74">&amp;#34;completion&amp;#34;&lt;/span> from&lt;span style="color:#e6db74">&amp;#34;gh-r&amp;#34;&lt;/span> id-as&lt;span style="color:#e6db74">&amp;#34;chezmoi&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> mv&lt;span style="color:#e6db74">&amp;#34;completions/chezmoi.zsh -&amp;gt; _chezmoi&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
@@ -1008,7 +1034,7 @@ This is now installed via git for all OS&amp;rsquo;s to keep the path work sane&
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit snippet OMZP::tmux
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- end &lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ubuntu">Ubuntu&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- &lt;span style="color:#66d9ef">if&lt;/span> hasKey .chezmoi.osRelease &lt;span style="color:#e6db74">&amp;#34;id&amp;#34;&lt;/span> -&lt;span style="color:#f92672">}}&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- &lt;span style="color:#66d9ef">if&lt;/span> eq .chezmoi.os &lt;span style="color:#e6db74">&amp;#34;linux&amp;#34;&lt;/span> -&lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{{&lt;/span>- &lt;span style="color:#66d9ef">if&lt;/span> eq .chezmoi.osRelease.id &lt;span style="color:#e6db74">&amp;#34;ubuntu&amp;#34;&lt;/span> &lt;span style="color:#f92672">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit ice wait&lt;span style="color:#e6db74">&amp;#39;0c&amp;#39;&lt;/span> lucid
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit snippet OMZP::ubuntu
@@ -1075,9 +1101,9 @@ This is now installed via git for all OS&amp;rsquo;s to keep the path work sane&
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zinit cdreplay -q
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="stop-profiling">Stop Profiling&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># zprof&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title/><link>https://blog.evilolive.dev/configs/my-lit-doom-config/all-posts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-doom-config/all-posts/</guid><description>DONEAbout Fill this out Sorry
-DONETest Post1 Content
-YESDoom Config Headers ;;; config.el -*- lexical-binding: t; -*- ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*- User info The real version has the proper info obviously.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title/><link>https://blog.evilolive.dev/configs/my-lit-doom-config/all-posts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.evilolive.dev/configs/my-lit-doom-config/all-posts/</guid><description>DONE About Fill this out Sorry
+DONE Test Post1 Content
+YES Doom Config Headers ;;; config.el -*- lexical-binding: t; -*- ;;; packages.el -*- lexical-binding: t; no-byte-compile: t; -*- User info The real version has the proper info obviously.
 (setq user-full-name &amp;#34;redacted&amp;#34; user-mail-address &amp;#34;redacted&amp;#34;) GPG/Security setup Set the settings for authorization/passwords. Don&amp;rsquo;t really use this but set anyway.
 (setq auth-sources &amp;#39;(&amp;#34;~/.authinfo.gpg&amp;#34;)) System-specific Hostnames hidden here. But they look like
 (defconst HOSTNAME (string-equal (system-name) &amp;#34;hostname&amp;#34;)) UI Scrolling Perhaps reduce flickering/help with speed on retina.</description><content>&lt;h2 id="about">&lt;!-- raw HTML omitted -->DONE&lt;!-- raw HTML omitted --> About&lt;/h2>
