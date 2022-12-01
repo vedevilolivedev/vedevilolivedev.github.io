@@ -2,7 +2,7 @@
 title = "ZSH Config"
 author = ["Ved Evilolive"]
 description = "ZSH lit config for zinit"
-date = 2022-11-30T23:54:00-07:00
+date = 2022-12-01T00:16:00-07:00
 draft = false
 toc = true
 +++
@@ -186,6 +186,10 @@ alias svim={{- lookPath "vim" | quote }}
 alias sed={{- lookPath "gsed" | quote }}
 alias ssed={{- lookPath "sed" | quote }}
 {{- end }}
+{{- if lookPath "gtar" }}
+alias tar={{- lookPath "gtar" | quote }}
+alias star={{- lookPath "tar" | quote }}
+{{- end }}
 ```
 
 
@@ -260,18 +264,17 @@ boxenascii() {
 ### Conda <span class="tag"><span class="work">work</span></span> {#conda}
 
 ```shell
-{{- if (eq .chezmoi.hostname "bburks-mbp") }}
+{{- if .workmode }}
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/bburks/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(CONDA_REPORT_ERRORS=false '${HOME}/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
  eval "$__conda_setup"
  else
-if [ -f "/Users/bburks/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-     . "/Users/bburks/opt/miniconda3/etc/profile.d/conda.sh"
+if [ -f "${HOME}/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+     . "${HOME}/opt/miniconda3/etc/profile.d/conda.sh"
 else
-     #export PATH="/Users/bburks/opt/miniconda3/bin:$PATH"
-    export PATH="$PATH:/Users/bburks/opt/minicoda3/bin"
+    export PATH="$PATH:${HOME}/opt/minicoda3/bin"
 fi
 fi
 unset __conda_setup
@@ -665,21 +668,18 @@ zinit snippet OMZP::command-not-found
 
 ## SSH {#ssh}
 
-Sets up the agent, hopefully unfucking the macos stuff
+Sets up the agent, hopefully unfucking the macos stuff.
 
 ```shell
 zinit ice wait'0c' lucid
 zinit snippet OMZP::ssh-agent
 #zinit snippet PZTM::ssh
-mykeyids=("id_ed25519")
-case $(hostname -s) in
-    "bburks-mbp")
-        keyids+=("magnite-github", "id_ecdsa_sk")
-        ;;
-    "caelus"|"coeus"|"frontiere")
-        [[ -f "${HOME}/.ssh/vault-signed.pub" ]] && keyids+=("vault-signed.pub")
-        ;;
-esac
+```
+
+Redacted the `keyids` code but basically make an array or something.
+Now actually add them.
+
+```shell
 for akey in ${mykeyids}; do
     mykeypaths+="${HOME}/.ssh/${akey}"
 done

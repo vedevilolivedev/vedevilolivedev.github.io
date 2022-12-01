@@ -3,7 +3,7 @@
 #+HUGO_SECTION: posts
 
 * DONE Doom Config
-CLOSED: [2022-11-30 Wed 23:54]
+CLOSED: [2022-12-01 Thu 00:16]
 :PROPERTIES:
 :export_hugo_bundle: my-lit-doom-config
 :EXPORT_FILE_NAME: emacs
@@ -15,7 +15,7 @@ Just my lit config
 #+end_description
 #+include: "~/chezmoi/dotfiles/doom_emacs/lit.org" :lines "8-"
 * DONE ZSH Config
-CLOSED: [2022-11-30 Wed 23:54]
+CLOSED: [2022-12-01 Thu 00:16]
 :PROPERTIES:
 :export_hugo_bundle: my-lit-zsh-config
 :EXPORT_FILE_NAME: zsh

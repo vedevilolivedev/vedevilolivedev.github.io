@@ -2,7 +2,7 @@
 title = "Doom Config"
 author = ["Ved Evilolive"]
 description = "Just my lit config"
-date = 2022-05-10T18:40:00-06:00
+date = 2022-12-01T00:16:00-07:00
 draft = false
 toc = true
 +++
@@ -59,7 +59,7 @@ Hostnames hidden here. But they look like
 #### Fancy splash image {#fancy-splash-image}
 
 ```emacs-lisp
-(setq fancy-splash-image (concat doom-private-dir "/splash/doomslant.png"))
+(setq fancy-splash-image (concat doom-user-dir "/splash/doomslant.png"))
 ```
 
 
@@ -71,15 +71,24 @@ These functions are also a convenience one so don't have to repeat them.
 (defun +ved/loadlit ()
   "Load the lit.org from ~/.doom.d or whatever the private dir is."
   (interactive)
-  (find-file (expand-file-name "lit.org" doom-private-dir)))
+  (find-file (expand-file-name "lit.org" doom-user-dir)))
 (defun +ved/ffchez ()
-  (interactive)
   "Explore the chezmoi dotfiles directory since this is frequented."
+  (interactive)
   (doom-project-find-file "~/chezmoi/dotfiles/"))
 (defun +ved/loadzshlit ()
-  (interactive)
   "Open the ZSH literate config file."
+  (interactive)
   (find-file (expand-file-name "~/ZSH-lit.org")))
+(defun +ved/loaddoominit ()
+  "Open the doom emacs init.el file."
+  (interactive)
+  (find-file (expand-file-name "init.el" doom-user-dir)))
+(defun +ved/loadhugo ()
+  "Open hugo file."
+  (interactive)
+  (find-file (expand-file-name "~/ghblog/content-org/all-posts.org"))
+)
 ```
 
 
@@ -90,6 +99,7 @@ These functions are also a convenience one so don't have to repeat them.
       :ne "f" #'find-file
       :ne "r" #'consult-recent-file
       :ne "p" #'doom/open-private-config
+      :ne "i" #'+ved/loaddoominit
       :ne "l" #'+ved/loadlit
       :ne "c" #'+ved/ffchez
       :ne "z" #'+ved/loadzshlit
@@ -111,6 +121,9 @@ These functions are also a convenience one so don't have to repeat them.
         ("Open EMACS Config Dir"
          :icon (all-the-icons-faicon "folder-open-o" :face 'doom-dashboard-menu-title)
          :action doom/open-private-config)
+        ("Open EMACS init.el"
+         :icon (all-the-icons-fileicon "emacs" :face 'doom-dashboard-menu-title)
+         :action +ved/loaddoominit)
         ("Open EMACS Literate ORG File"
          :icon (all-the-icons-fileicon "emacs" :face 'doom-dashboard-menu-title)
          :action +ved/loadlit)
@@ -119,7 +132,8 @@ These functions are also a convenience one so don't have to repeat them.
          :action +ved/loadzshlit)
         ("Open Chezmoi Dotfiles Dir"
          :icon (all-the-icons-octicon "home" :face 'doom-dashboard-menu-title)
-         :action +ved/ffchez)))
+         :action +ved/ffchez))
+)
 ```
 
 
@@ -314,6 +328,7 @@ First need to set the org directory
 
 ### Allow encryption in org files {#allow-encryption-in-org-files}
 
+I don't really use this much but hell, why not? Also including the read_only tag in the exclude cause they'll be commonly used together.
 This version has my email redacted
 
 ```emacs-lisp
@@ -332,9 +347,11 @@ This version has my email redacted
 
 ### Read-only sections {#read-only-sections}
 
+Mostly for also protecting the encrypted sections.
+
 ```emacs-lisp
 (defun unpackaged/org-next-heading-tagged (tag)
-  "Move to beginning of next heading tagged with TAG and return point, or return nil if none found."
+  "Move to next heading tagged with TAG and return point, or return nil if none found."
   (when (re-search-forward (rx-to-string `(seq bol (1+ "*") (1+ blank) (optional (1+ not-newline) (1+ blank))
                                                ;; Beginning of tags
                                                ":"
@@ -346,7 +363,7 @@ This version has my email redacted
     (goto-char (match-beginning 0))))
 
 (defun ap/org-remove-read-only ()
-  "Remove read-only text properties from Org entries tagged \"read_only\" in current buffer."
+  "Remove read-only text properties from Org entries tagged read_only in current buffer."
   (let ((inhibit-read-only t))
     (org-with-wide-buffer
      (goto-char (point-min))
@@ -456,7 +473,7 @@ I forget what invisible-edits does.
     (setq
         org-use-property-inheritance t
         org-log-done 'time
-        org-catch-invisible-edits 'smart
+        org-fold-catch-invisible-edits 'smart
         ;; org-export-with-sub-superscripts '{}
         org-ellipsis ""
         org-support-shift-select t
@@ -489,7 +506,7 @@ It's annoying
 
 ```emacs-lisp
   (after! company (defun ved/org-mode-hook()
-    (when (featurep! :completion company)
+    (when (modulep! :completion company)
       (message "Disabling company-mode while in org-capture...")
       (company-mode -1))))
   (after! org (add-hook! org-capture-mode (ved/org-mode-hook)))
@@ -593,7 +610,7 @@ Set line numbers and some various things I like to have.
 
 -   Mac specific keybinds (set `fn` key to `hyper`)
 -   Also makes `Super Left-Click` to `Middle Click`
--   `Super` is `Command` on Mac.
+-   `Super` is `Command` On Mac.
 
 <!--listend-->
 
@@ -634,6 +651,8 @@ I hate some of the remaps, so this puts it to how I like it/used to it from gene
     :gn "H-l" #'+ved/loadlit
     :gn "H-r" #'+ved/ffchez
     :gn "H-z" #'+ved/loadzshlit
+    :gn "H-i" #'+ved/loaddoominit
+    :gn "H-b" #'+ved/loadhugo
     :gn "H-m" (cmd! (find-file (expand-file-name "~/chezmoi/dotfiles/.chezmoi.toml.tmpl")))
     :gn "H-v" (cmd! (doom-project-find-file "~/chezmoi/dotfiles/targets/nvim/"))
 )
@@ -675,7 +694,9 @@ I hate some of the remaps, so this puts it to how I like it/used to it from gene
 ## File Modes {#file-modes}
 
 
-### VIM {#vim}
+### <span class="org-todo done KILL">KILL</span> VIM {#vim}
+
+Moved to neovim, this probably isn't necessary.
 
 ```emacs-lisp
 (package! vimrc-mode)
@@ -741,10 +762,12 @@ For `.gitlabci` file
 ```
 
 ```emacs-lisp
+(when DENM
 (use-package! jenkinsfile-mode
 :commands jenkinsfile-mode)
 (use-package! groovy-mode
 :commands groovy-mode)
+)
 ```
 
 
@@ -841,7 +864,7 @@ otherwise call `org-self-insert-command'."
                 collect `(define-key org-mode-map (kbd ,key) #',name))))
 ;;;###autoload
 (defun ap/org-mark-read-only ()
-  "Mark all entries in the buffer tagged \"read_only\" with read-only text properties."
+  "Mark all entries in the buffer tagged read_only with read-only text properties."
   (interactive)
   (org-with-wide-buffer
    (goto-char (point-min))
@@ -991,6 +1014,7 @@ Mostly for work but sometimes things need it (like `.tmpl` for `chezmoi`)
 I have a script that installs it for NVIM so this is just pointing it toward seeing it. I dunno why the path it has is so jacked up but it is.
 
 ```emacs-lisp
+; Might need to fix this to not be specific to certaincomputers.
 (after! lsp-mode
 (setq! lsp-clients-lua-lsp-server-install-dir "/Users/kailash/.asdf/shims/lua-lsp")
 )
